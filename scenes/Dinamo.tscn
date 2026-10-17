@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5bgc505y7br8"]
 
-[ext_resource type="Script" uid="uid://bpuhypsg1fxxn" path="res://player/dinamo/dinamo.gd" id="1_je80l"]
+[ext_resource type="Script" uid="uid://bpuhypsg1fxxn" path="res://scripts/dinamo.gd" id="1_je80l"]
 
 [node name="Dinamo" type="Node2D" unique_id=474029062]
 script = ExtResource("1_je80l")

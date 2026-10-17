@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://lyonk8mv15ef"]
 
-[ext_resource type="Script" uid="uid://4ybovx1n1wxa" path="res://objects/cassete-player/cassete_player.gd" id="1_32p6l"]
-[ext_resource type="Texture2D" uid="uid://b5pdat6gtwr8h" path="res://icon.svg" id="2_ob415"]
+[ext_resource type="Script" uid="uid://4ybovx1n1wxa" path="res://scripts/cassete_player.gd" id="1_spyam"]
+[ext_resource type="Texture2D" uid="uid://b5pdat6gtwr8h" path="res://icon.svg" id="2_mxfog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob415"]
 size = Vector2(20, 23.282883)
 
 [node name="CassetePlayer" type="Area2D" unique_id=1953526610 node_paths=PackedStringArray("buttons")]
-script = ExtResource("1_32p6l")
+script = ExtResource("1_spyam")
 buttons = [NodePath("UI/HSplitContainer/VBoxContainer/Button"), NodePath("UI/HSplitContainer/VBoxContainer/Button2"), NodePath("UI/HSplitContainer/VBoxContainer/Button3"), NodePath("UI/HSplitContainer/VBoxContainer/Button4")]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=81332582]
 modulate = Color(1, 1, 0.23137255, 1)
 scale = Vector2(0.6807117, 0.6807117)
-texture = ExtResource("2_ob415")
+texture = ExtResource("2_mxfog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218284808]
 position = Vector2(0, -0.49999976)

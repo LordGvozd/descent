@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcwp4pe55wkfb"
-path="res://.godot/imported/vhs_mouth_put_in.png-adaf7c4798ac0341256918f0ee5aa945.ctex"
+uid="uid://c4fbe1h8irlo"
+path="res://.godot/imported/tv_button_on.png-5dfbca43d9f6e9d22f47c93a3e11a637.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/vhs_mouth_put_in.png"
-dest_files=["res://.godot/imported/vhs_mouth_put_in.png-adaf7c4798ac0341256918f0ee5aa945.ctex"]
+source_file="res://sprites/ui/cassets_player/tv_button_on.png"
+dest_files=["res://.godot/imported/tv_button_on.png-5dfbca43d9f6e9d22f47c93a3e11a637.ctex"]
 
 [params]
 

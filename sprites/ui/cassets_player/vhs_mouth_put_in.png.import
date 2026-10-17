@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0sh42r38hrk1"
-path="res://.godot/imported/vhs_back.png-3fbf901b9cca6d3a0ffcf5875cca252c.ctex"
+uid="uid://dcwp4pe55wkfb"
+path="res://.godot/imported/vhs_mouth_put_in.png-fcb9e0fc717138d045d9f37a5befd814.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/vhs_back.png"
-dest_files=["res://.godot/imported/vhs_back.png-3fbf901b9cca6d3a0ffcf5875cca252c.ctex"]
+source_file="res://sprites/ui/cassets_player/vhs_mouth_put_in.png"
+dest_files=["res://.godot/imported/vhs_mouth_put_in.png-fcb9e0fc717138d045d9f37a5befd814.ctex"]
 
 [params]
 

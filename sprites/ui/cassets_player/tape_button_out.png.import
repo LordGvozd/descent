@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dubcyxh87lgx8"
-path="res://.godot/imported/tape_button_out.png-eb45c7b430924631e5524b5c83909602.ctex"
+path="res://.godot/imported/tape_button_out.png-2f5e4b6d367f630615aa5d758c48ddb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/tape_button_out.png"
-dest_files=["res://.godot/imported/tape_button_out.png-eb45c7b430924631e5524b5c83909602.ctex"]
+source_file="res://sprites/ui/cassets_player/tape_button_out.png"
+dest_files=["res://.godot/imported/tape_button_out.png-2f5e4b6d367f630615aa5d758c48ddb3.ctex"]
 
 [params]
 

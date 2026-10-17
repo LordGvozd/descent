@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgngtyidunvh"
-path="res://.godot/imported/vhs_mouth_full.png-5a83eb17bc7d67922d3470a2a09140c3.ctex"
+path="res://.godot/imported/vhs_mouth_full.png-4a8ddfca6fd2da17b74575d62febbec4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/vhs_mouth_full.png"
-dest_files=["res://.godot/imported/vhs_mouth_full.png-5a83eb17bc7d67922d3470a2a09140c3.ctex"]
+source_file="res://sprites/ui/cassets_player/vhs_mouth_full.png"
+dest_files=["res://.godot/imported/vhs_mouth_full.png-4a8ddfca6fd2da17b74575d62febbec4.ctex"]
 
 [params]
 
