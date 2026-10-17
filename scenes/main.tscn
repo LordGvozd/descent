@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2gjvrdg88m4i"]
+
+[node name="Main" type="Node2D" unique_id=1751049923]
+
+[node name="Label" type="Label" parent="." unique_id=1721379732]
+offset_left = 503.0
+offset_top = 208.0
+offset_right = 556.0
+offset_bottom = 231.0
+text = "СПУСК"
