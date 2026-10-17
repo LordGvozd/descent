@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://d2gjvrdg88m4i"]
 
-[node name="Main" type="Node2D" unique_id=1751049923]
+[ext_resource type="PackedScene" uid="uid://cdphvu7e47wfy" path="res://player/Player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://wxkydh5bma55" path="res://objects/cassete-player/Cassete.tscn" id="2_0wfyh"]
 
-[node name="Label" type="Label" parent="." unique_id=1721379732]
-offset_left = 503.0
-offset_top = 208.0
-offset_right = 556.0
-offset_bottom = 231.0
-text = "СПУСК"
+[sub_resource type="GDScript" id="GDScript_sgp6g"]
+script/source = "extends Node2D
+"
+
+[node name="Main" type="Node2D" unique_id=1751049923]
+script = SubResource("GDScript_sgp6g")
+
+[node name="Player" parent="." unique_id=1453977623 instance=ExtResource("1_o5qli")]
+
+[node name="Cassete" parent="." unique_id=1912372171 instance=ExtResource("2_0wfyh")]
+position = Vector2(193, 104)

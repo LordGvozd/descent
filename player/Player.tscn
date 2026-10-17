@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cdphvu7e47wfy"]
+
+[ext_resource type="Script" uid="uid://3vkj1563u0dx" path="res://player/player.gd" id="1_ulp21"]
+[ext_resource type="Texture2D" uid="uid://b5pdat6gtwr8h" path="res://icon.svg" id="2_3c3w1"]
+[ext_resource type="Script" uid="uid://daaud0ccbssq8" path="res://player/player_move.gd" id="2_wnvi2"]
+[ext_resource type="PackedScene" uid="uid://b5bgc505y7br8" path="res://player/dinamo/Dinamo.tscn" id="4_83hs8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnvi2"]
+size = Vector2(118, 119)
+
+[node name="Player" type="Node2D" unique_id=1453977623]
+script = ExtResource("1_ulp21")
+
+[node name="Body" type="CharacterBody2D" parent="." unique_id=1530978144 groups=["Player"]]
+script = ExtResource("2_wnvi2")
+speed = 20
+
+[node name="Sprite" type="Sprite2D" parent="Body" unique_id=1565462049]
+texture = ExtResource("2_3c3w1")
+
+[node name="Collider" type="CollisionShape2D" parent="Body" unique_id=1073237579]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_wnvi2")
+
+[node name="Camera2D" type="Camera2D" parent="Body" unique_id=1439448167]
+position_smoothing_enabled = true
+
+[node name="Dinamo" parent="Body" unique_id=474029062 instance=ExtResource("4_83hs8")]

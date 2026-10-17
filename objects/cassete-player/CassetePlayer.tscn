@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://lyonk8mv15ef"]
+
+[ext_resource type="Script" uid="uid://4ybovx1n1wxa" path="res://objects/cassete-player/cassete_player.gd" id="1_32p6l"]
+[ext_resource type="Texture2D" uid="uid://b5pdat6gtwr8h" path="res://icon.svg" id="2_ob415"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ob415"]
+size = Vector2(20, 23.282883)
+
+[node name="CassetePlayer" type="Area2D" unique_id=1953526610 node_paths=PackedStringArray("buttons")]
+script = ExtResource("1_32p6l")
+buttons = [NodePath("UI/HSplitContainer/VBoxContainer/Button"), NodePath("UI/HSplitContainer/VBoxContainer/Button2"), NodePath("UI/HSplitContainer/VBoxContainer/Button3"), NodePath("UI/HSplitContainer/VBoxContainer/Button4")]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=81332582]
+modulate = Color(1, 1, 0.23137255, 1)
+scale = Vector2(0.6807117, 0.6807117)
+texture = ExtResource("2_ob415")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218284808]
+position = Vector2(0, -0.49999976)
+scale = Vector2(4.643017, 3.8225513)
+shape = SubResource("RectangleShape2D_ob415")
+
+[node name="UI" type="Control" parent="." unique_id=1805130426]
+visible = false
+custom_minimum_size = Vector2(14.6, 20.28)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="UI" unique_id=834608057]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.99500006
+offset_right = 2.0
+offset_bottom = 0.23498535
+split_offsets = PackedInt32Array(0, 88)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="UI/HSplitContainer" unique_id=487516499]
+custom_minimum_size = Vector2(770.05, 29.205)
+layout_mode = 2
+
+[node name="VBoxContainer" type="Control" parent="UI/HSplitContainer" unique_id=1226208902]
+custom_minimum_size = Vector2(22.88, 2.535)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI/HSplitContainer/VBoxContainer" unique_id=862053992]
+layout_mode = 0
+offset_top = 56.000008
+offset_right = 371.0
+offset_bottom = 164.36365
+scale = Vector2(0.9874689, 0.95652175)
+text = "CASSETE NAME"
+
+[node name="Button2" type="Button" parent="UI/HSplitContainer/VBoxContainer" unique_id=1920010455]
+layout_mode = 0
+offset_top = 193.0
+offset_right = 371.0
+offset_bottom = 301.36365
+scale = Vector2(0.9874689, 0.95652175)
+text = "CASSETE NAME"
+
+[node name="Button3" type="Button" parent="UI/HSplitContainer/VBoxContainer" unique_id=278728857]
+layout_mode = 0
+offset_top = 324.0
+offset_right = 371.0
+offset_bottom = 432.36365
+scale = Vector2(0.9874689, 0.95652175)
+text = "CASSETE NAME"
+
+[node name="Button4" type="Button" parent="UI/HSplitContainer/VBoxContainer" unique_id=866635679]
+layout_mode = 0
+offset_left = -1.9999999
+offset_top = 474.00003
+offset_right = 369.0
+offset_bottom = 582.36365
+scale = Vector2(0.9874689, 0.95652175)
+text = "CASSETE NAME"
