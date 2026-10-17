@@ -13,7 +13,7 @@ script = ExtResource("1_ulp21")
 
 [node name="Body" type="CharacterBody2D" parent="." unique_id=1530978144 groups=["Player"]]
 script = ExtResource("2_wnvi2")
-speed = 20
+speed = 50
 
 [node name="Sprite" type="Sprite2D" parent="Body" unique_id=1565462049]
 texture = ExtResource("2_3c3w1")
