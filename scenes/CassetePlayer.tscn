@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://4ybovx1n1wxa" path="res://scripts/cassete_player.gd" id="1_spyam"]
 [ext_resource type="Texture2D" uid="uid://b5pdat6gtwr8h" path="res://icon.svg" id="2_mxfog"]
+[ext_resource type="Texture2D" uid="uid://c0sh42r38hrk1" path="res://sprites/ui/cassets_player/vhs_back.png" id="3_mxfog"]
+[ext_resource type="Texture2D" uid="uid://dubcyxh87lgx8" path="res://sprites/ui/cassets_player/tape_button_out.png" id="4_oxqyh"]
+[ext_resource type="Texture2D" uid="uid://cj08gn3tuxfgy" path="res://sprites/ui/cassets_player/tape_button_in.png" id="4_uqhpk"]
+[ext_resource type="Texture2D" uid="uid://c4fbe1h8irlo" path="res://sprites/ui/cassets_player/tv_button_on.png" id="6_eiuoe"]
+[ext_resource type="Texture2D" uid="uid://5qtwimwfsc46" path="res://sprites/ui/cassets_player/tv_button_off.png" id="7_yupe4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob415"]
 size = Vector2(20, 23.282883)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxfog"]
+texture = ExtResource("4_oxqyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxqyh"]
+texture = ExtResource("4_uqhpk")
+
 [node name="CassetePlayer" type="Area2D" unique_id=1953526610 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_spyam")
-buttons = [NodePath("UI/HSplitContainer/VBoxContainer/Button"), NodePath("UI/HSplitContainer/VBoxContainer/Button2"), NodePath("UI/HSplitContainer/VBoxContainer/Button3"), NodePath("UI/HSplitContainer/VBoxContainer/Button4")]
+buttons = [NodePath("CanvasLayer/UI/CassetsButtons/Button"), NodePath("CanvasLayer/UI/CassetsButtons/Button2"), NodePath("CanvasLayer/UI/CassetsButtons/Button3"), NodePath("CanvasLayer/UI/CassetsButtons/Button4"), NodePath("CanvasLayer/UI/CassetsButtons/Button5"), NodePath("CanvasLayer/UI/CassetsButtons/Button6")]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=81332582]
 modulate = Color(1, 1, 0.23137255, 1)
@@ -20,61 +31,115 @@ position = Vector2(0, -0.49999976)
 scale = Vector2(4.643017, 3.8225513)
 shape = SubResource("RectangleShape2D_ob415")
 
-[node name="UI" type="Control" parent="." unique_id=1805130426]
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=641144624]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=1805130426]
 custom_minimum_size = Vector2(14.6, 20.28)
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 1.001
+anchor_bottom = 1.0
 offset_left = 2.0
-offset_right = 1153.0
-offset_bottom = 647.0
+offset_right = -0.15209961
+offset_bottom = -1.0
 
-[node name="HSplitContainer" type="HSplitContainer" parent="UI" unique_id=834608057]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI" unique_id=1030285282]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.99500006
-offset_right = 2.0
-offset_bottom = 0.23498535
-split_offsets = PackedInt32Array(0, 88)
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mxfog")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="UI/HSplitContainer" unique_id=487516499]
-custom_minimum_size = Vector2(770.05, 29.205)
-layout_mode = 2
+[node name="CassetsButtons" type="Control" parent="CanvasLayer/UI" unique_id=1488416186]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="VBoxContainer" type="Control" parent="UI/HSplitContainer" unique_id=1226208902]
-custom_minimum_size = Vector2(22.88, 2.535)
-layout_mode = 2
-
-[node name="Button" type="Button" parent="UI/HSplitContainer/VBoxContainer" unique_id=862053992]
+[node name="Button" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=902349238]
 layout_mode = 0
-offset_top = 56.000008
-offset_right = 371.0
-offset_bottom = 164.36365
-scale = Vector2(0.9874689, 0.95652175)
-text = "CASSETE NAME"
+offset_left = 780.0
+offset_top = 38.0
+offset_right = 1132.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
+text = "Casset name"
 
-[node name="Button2" type="Button" parent="UI/HSplitContainer/VBoxContainer" unique_id=1920010455]
+[node name="Button2" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=1799282625]
 layout_mode = 0
-offset_top = 193.0
-offset_right = 371.0
-offset_bottom = 301.36365
-scale = Vector2(0.9874689, 0.95652175)
-text = "CASSETE NAME"
+offset_left = 780.0
+offset_top = 116.0
+offset_right = 1132.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
+text = "Casset name"
 
-[node name="Button3" type="Button" parent="UI/HSplitContainer/VBoxContainer" unique_id=278728857]
+[node name="Button3" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=2135862269]
 layout_mode = 0
-offset_top = 324.0
-offset_right = 371.0
-offset_bottom = 432.36365
-scale = Vector2(0.9874689, 0.95652175)
-text = "CASSETE NAME"
+offset_left = 780.0
+offset_top = 192.0
+offset_right = 1132.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
+text = "Casset name"
 
-[node name="Button4" type="Button" parent="UI/HSplitContainer/VBoxContainer" unique_id=866635679]
+[node name="Button4" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=210325885]
 layout_mode = 0
-offset_left = -1.9999999
-offset_top = 474.00003
-offset_right = 369.0
-offset_bottom = 582.36365
-scale = Vector2(0.9874689, 0.95652175)
-text = "CASSETE NAME"
+offset_left = 780.0
+offset_top = 271.0
+offset_right = 1132.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
+text = "Casset name"
+
+[node name="Button5" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=752399116]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 347.0
+offset_right = 1131.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
+text = "Casset name"
+
+[node name="Button6" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=17088236]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 423.0
+offset_right = 1132.0
+offset_bottom = 494.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
+text = "Casset name"
+
+[node name="OnOffButton" type="TextureButton" parent="CanvasLayer/UI" unique_id=615201481]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 578.0
+offset_right = 99.0
+offset_bottom = 622.0
+texture_normal = ExtResource("6_eiuoe")
+texture_pressed = ExtResource("7_yupe4")
+stretch_mode = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/UI" unique_id=1289423208]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 19.0
+offset_right = 639.0
+offset_bottom = 478.0
+expand = true
+
+[connection signal="button_up" from="CanvasLayer/UI/OnOffButton" to="." method="_on_on_off_button_button_up"]
