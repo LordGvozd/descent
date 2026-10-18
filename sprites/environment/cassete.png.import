@@ -2,6 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
+uid="uid://dekh6wsx0j85h"
 uid="uid://bseovoinki2eu"
 path="res://.godot/imported/cassete.png-60605063fb4958cd316a1e70095a29ed.ctex"
 metadata={
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

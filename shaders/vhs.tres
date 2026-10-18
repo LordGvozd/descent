@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c8gj65yygxjgw"]
+
+[ext_resource type="Shader" uid="uid://bcjhd73c5rpou" path="res://resources/shaders/vhs.gdshader" id="1_qgjbb"]
+
+[resource]
+shader = ExtResource("1_qgjbb")
+shader_parameter/pixel_size = 4.8970001851075
+shader_parameter/vhs_intensity = 0.0
+shader_parameter/noise_intensity = 0.0400000019
+shader_parameter/opacity = 0.2210000104975
