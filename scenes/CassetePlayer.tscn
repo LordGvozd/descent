@@ -1,11 +1,22 @@
 [gd_scene format=3 uid="uid://lyonk8mv15ef"]
 
 [ext_resource type="Script" uid="uid://4ybovx1n1wxa" path="res://scripts/cassete_player.gd" id="1_spyam"]
+[ext_resource type="VideoStream" uid="uid://c2my0g7jiu4vr" path="res://test_video/videoplayback.ogv" id="2_qqn51"]
 [ext_resource type="Texture2D" uid="uid://ba48f85rvd7gh" path="res://sprites/environment/cas_player.png" id="2_yupe4"]
+[ext_resource type="AudioStream" uid="uid://bi42t7updmvtt" path="res://audio/sounds/cassets_player/put_in.mp3" id="3_gw7rk"]
 [ext_resource type="Texture2D" uid="uid://c0sh42r38hrk1" path="res://sprites/ui/cassets_player/vhs_back.png" id="3_mxfog"]
+[ext_resource type="FontFile" uid="uid://dam7t1bdneoti" path="res://fonts/fs-pixel-sans-unicode-regular.ttf" id="4_a5ixj"]
+[ext_resource type="Texture2D" uid="uid://dubcyxh87lgx8" path="res://sprites/ui/cassets_player/tape_button_out.png" id="4_oxqyh"]
+[ext_resource type="Texture2D" uid="uid://cj08gn3tuxfgy" path="res://sprites/ui/cassets_player/tape_button_in.png" id="4_uqhpk"]
+[ext_resource type="AudioStream" uid="uid://cppoyqpb77lf2" path="res://audio/sounds/cassets_player/pull_out.mp3" id="4_wetf7"]
+[ext_resource type="AudioStream" uid="uid://cdksu1j7ouwwu" path="res://audio/sounds/cassets_player/off_on.mp3" id="5_vnc0d"]
 [ext_resource type="Texture2D" uid="uid://c4fbe1h8irlo" path="res://sprites/ui/cassets_player/tv_button_on.png" id="6_eiuoe"]
+[ext_resource type="AudioStream" uid="uid://cq0rxkwhbkiqq" path="res://audio/sounds/cassets_player/mini1.mp3" id="6_fg30y"]
+[ext_resource type="AudioStream" uid="uid://d3pcvhjdb4vsn" path="res://audio/sounds/cassets_player/mini2.mp3" id="7_hpqlv"]
+[ext_resource type="Texture2D" uid="uid://dcwp4pe55wkfb" path="res://sprites/ui/cassets_player/vhs_mouth_put_in.png" id="7_vnc0d"]
 [ext_resource type="Texture2D" uid="uid://5qtwimwfsc46" path="res://sprites/ui/cassets_player/tv_button_off.png" id="7_yupe4"]
 [ext_resource type="Texture2D" uid="uid://d4djac6u0s4ka" path="res://sprites/ui/cassets_player/vhs_minus_button.png" id="8_oir36"]
+[ext_resource type="Texture2D" uid="uid://dgngtyidunvh" path="res://sprites/ui/cassets_player/vhs_mouth_full.png" id="8_wetf7"]
 [ext_resource type="Texture2D" uid="uid://def8qyiowm6wm" path="res://sprites/ui/cassets_player/vhs_minus_button_pressed.png" id="9_21v10"]
 [ext_resource type="Texture2D" uid="uid://kxvwqt0uqr1k" path="res://sprites/ui/cassets_player/vhs_minus_button_hovered.png" id="10_gnavp"]
 [ext_resource type="Texture2D" uid="uid://cchhh6sbg18rs" path="res://sprites/ui/cassets_player/vhs_plus_button.png" id="11_54oau"]
@@ -15,22 +26,24 @@
 [ext_resource type="Texture2D" uid="uid://mulwcl0opwvp" path="res://sprites/ui/cassets_player/vhs_pause_button_pressed.png" id="15_wetf7"]
 [ext_resource type="Texture2D" uid="uid://brgxfs5jjcwgv" path="res://sprites/ui/cassets_player/vhs_pause_button_hovered.png" id="16_vnc0d"]
 [ext_resource type="Texture2D" uid="uid://d2jh5eeq5h3ap" path="res://sprites/ui/cassets_player/vhs_play_button.png" id="17_vgu4w"]
+[ext_resource type="Texture2D" uid="uid://c5tceatc1bf6u" path="res://sprites/ui/cassets_player/vhs_play_button_hovered.png" id="18_21v10"]
 [ext_resource type="Texture2D" uid="uid://b6qj646ea7uxp" path="res://sprites/ui/cassets_player/vhs_play_button_pressed.png" id="18_fg30y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob415"]
-size = Vector2(20, 23.282883)
+size = Vector2(6.461317, 7.324951)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpubu"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yupe4"]
 load_path = "res://.godot/imported/tape_button_out.png-2f5e4b6d367f630615aa5d758c48ddb3.ctex"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_34ugm"]
-texture = SubResource("CompressedTexture2D_cpubu")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5ixj"]
+texture = SubResource("CompressedTexture2D_yupe4")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cpubu"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yupe4"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21v10"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqn51"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oir36"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxqyh"]
+texture = ExtResource("4_uqhpk")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxfog"]
 texture = ExtResource("4_oxqyh")
@@ -38,19 +51,29 @@ texture = ExtResource("4_oxqyh")
 [node name="CassetePlayer" type="Area2D" unique_id=1953526610 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_spyam")
 buttons = [NodePath("CanvasLayer/UI/CassetsButtons/Button"), NodePath("CanvasLayer/UI/CassetsButtons/Button2"), NodePath("CanvasLayer/UI/CassetsButtons/Button3"), NodePath("CanvasLayer/UI/CassetsButtons/Button4"), NodePath("CanvasLayer/UI/CassetsButtons/Button5"), NodePath("CanvasLayer/UI/CassetsButtons/Button6")]
+default_video = ExtResource("2_qqn51")
+casset_put_sound = ExtResource("3_gw7rk")
+casset_input_sound = ExtResource("4_wetf7")
+off_on_sound = ExtResource("5_vnc0d")
+mini_buttons_sounds = Array[AudioStreamMP3]([ExtResource("6_fg30y"), ExtResource("7_hpqlv")])
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=81332582]
-scale = Vector2(2.8164768, 2.8164768)
 texture = ExtResource("2_yupe4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218284808]
-position = Vector2(0, -0.49999976)
+position = Vector2(-6.854534e-07, 0.9999995)
 scale = Vector2(4.643017, 3.8225513)
 shape = SubResource("RectangleShape2D_ob415")
+
+[node name="CassetSoundsPlayer" type="AudioStreamPlayer2D" parent="." unique_id=875669124]
+position = Vector2(345, 594)
+
+[node name="MiniButtonsPlayer" type="AudioStreamPlayer2D" parent="." unique_id=329579895]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=641144624]
 
 [node name="UI" type="Control" parent="CanvasLayer" unique_id=1805130426]
+visible = false
 custom_minimum_size = Vector2(14.6, 20.28)
 layout_mode = 3
 anchor_right = 1.001
@@ -59,175 +82,289 @@ offset_left = 2.0
 offset_right = -0.15209961
 offset_bottom = -1.0
 
+[node name="Panel" type="TextureRect" parent="CanvasLayer/UI" unique_id=324844466]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_top = 0.017
+anchor_right = 0.61
+anchor_bottom = 0.77000004
+offset_left = 0.48700714
+offset_top = 0.0009994507
+offset_right = -583.6533
+offset_bottom = -422.64624
+scale = Vector2(13.573353, 7.545266)
+texture = ExtResource("7_vnc0d")
+expand_mode = 1
+
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI" unique_id=1030285282]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_right = -2.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_mxfog")
 
+[node name="mouth_open" type="TextureRect" parent="CanvasLayer/UI" unique_id=1904218769]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.149
+anchor_top = 0.785
+anchor_right = 0.499
+anchor_bottom = 0.878
+offset_left = -0.49900818
+offset_top = 0.10498047
+offset_right = -0.34899902
+offset_bottom = -0.06604004
+texture = ExtResource("8_wetf7")
+
 [node name="CassetsButtons" type="Control" parent="CanvasLayer/UI" unique_id=1488416186]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchor_left = 0.66700006
+anchor_top = 0.031000001
+anchor_right = 1.0
+anchor_bottom = 0.78700006
+offset_left = -5.717041
+offset_top = -0.057001114
+offset_right = -2.0
+offset_bottom = 4.810974
 
 [node name="Button" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=902349238]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.5
-anchor_top = 0.95000005
-anchor_right = 28.300001
-anchor_bottom = 2.7250001
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_34ugm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cpubu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_21v10")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_oir36")
+anchor_left = 0.044000003
+anchor_top = 0.037
+anchor_right = 0.95500004
+anchor_bottom = 0.18
+offset_left = -0.028001785
+offset_top = 0.07701111
+offset_right = 0.16986084
+offset_bottom = 0.0799942
+theme_override_colors/font_color = Color(0.16470589, 0.02745098, 0, 1)
+theme_override_fonts/font = ExtResource("4_a5ixj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxTexture_a5ixj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yupe4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qqn51")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
 [node name="Button2" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=1799282625]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.5
-anchor_top = 2.9
-anchor_right = 28.300001
-anchor_bottom = 4.675
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_34ugm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cpubu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_21v10")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_oir36")
+anchor_left = 0.044000003
+anchor_top = 0.192
+anchor_right = 0.95600003
+anchor_bottom = 0.33200002
+offset_left = -0.028001785
+offset_top = 0.15200043
+offset_right = 0.02798462
+offset_bottom = -0.008010864
+theme_override_colors/font_color = Color(0.16470589, 0.02745098, 0, 1)
+theme_override_fonts/font = ExtResource("4_a5ixj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yupe4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qqn51")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
-[node name="Button3" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=2135862269]
+[node name="Button3" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=218910060]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.5
-anchor_top = 4.8
-anchor_right = 28.300001
-anchor_bottom = 6.5750003
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_34ugm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cpubu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_21v10")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_oir36")
+anchor_left = 0.044000003
+anchor_top = 0.34800002
+anchor_right = 0.95600003
+anchor_bottom = 0.48800004
+offset_left = -0.028001785
+offset_top = 0.08799744
+offset_right = 0.02798462
+offset_bottom = -0.072021484
+theme_override_colors/font_color = Color(0.16470589, 0.02745098, 0, 1)
+theme_override_fonts/font = ExtResource("4_a5ixj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yupe4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qqn51")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
-[node name="Button4" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=210325885]
+[node name="Button4" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=1651716644]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.5
-anchor_top = 6.775
-anchor_right = 28.300001
-anchor_bottom = 8.55
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_34ugm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cpubu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_21v10")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_oir36")
+anchor_left = 0.044000003
+anchor_top = 0.50200003
+anchor_right = 0.95600003
+anchor_bottom = 0.642
+offset_left = -0.028001785
+offset_top = 0.011978149
+offset_right = 0.02798462
+offset_bottom = -0.14801025
+theme_override_colors/font_color = Color(0.16470589, 0.02745098, 0, 1)
+theme_override_fonts/font = ExtResource("4_a5ixj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yupe4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qqn51")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
-[node name="Button5" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=752399116]
+[node name="Button5" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=864965569]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.475
-anchor_top = 8.675
-anchor_right = 28.275002
-anchor_bottom = 10.450001
-offset_bottom = -3.0517578e-05
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_34ugm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cpubu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_21v10")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_oir36")
+anchor_left = 0.044000003
+anchor_top = 0.65800005
+anchor_right = 0.95600003
+anchor_bottom = 0.79800004
+offset_left = -0.028001785
+offset_top = -0.05203247
+offset_right = 0.02798462
+offset_bottom = -0.21200562
+theme_override_colors/font_color = Color(0.16470589, 0.02745098, 0, 1)
+theme_override_fonts/font = ExtResource("4_a5ixj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yupe4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qqn51")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
-[node name="Button6" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=17088236]
+[node name="Button6" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=1000087137]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.5
-anchor_top = 10.575001
-anchor_right = 28.300001
-anchor_bottom = 12.35
-offset_top = -3.0517578e-05
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_34ugm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cpubu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_21v10")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_oir36")
+anchor_left = 0.044000003
+anchor_top = 0.814
+anchor_right = 0.95600003
+anchor_bottom = 0.95300007
+offset_left = -0.028001785
+offset_top = -0.115997314
+offset_right = 0.02798462
+offset_bottom = 0.21795654
+theme_override_colors/font_color = Color(0.16470589, 0.02745098, 0, 1)
+theme_override_fonts/font = ExtResource("4_a5ixj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yupe4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qqn51")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
 [node name="OnOffButton" type="TextureButton" parent="CanvasLayer/UI" unique_id=615201481]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 578.0
-offset_right = 99.0
-offset_bottom = 622.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.89300007
+anchor_right = 0.086
+anchor_bottom = 0.961
+offset_left = 0.16799927
+offset_top = 0.22894287
+offset_right = 0.013999939
+offset_bottom = 0.23297119
 texture_normal = ExtResource("6_eiuoe")
 texture_pressed = ExtResource("7_yupe4")
 stretch_mode = 0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/UI" unique_id=1289423208]
-layout_mode = 0
-offset_left = 121.0
-offset_top = 19.0
-offset_right = 639.0
-offset_bottom = 478.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.076000005
+anchor_top = 0.029000001
+anchor_right = 0.56600004
+anchor_bottom = 0.739
+offset_left = 0.52399445
+offset_top = 0.23699951
+offset_right = -0.46606445
+offset_bottom = -0.13302612
 expand = true
 
-[node name="Control" type="Control" parent="CanvasLayer/UI" unique_id=1264694189]
-anchors_preset = 0
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/UI" unique_id=1469870354]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MinusButton" type="TextureButton" parent="CanvasLayer/UI/Control" unique_id=216099743]
-texture_filter = 3
-custom_minimum_size = Vector2(2, 2)
-layout_mode = 0
-offset_left = 157.0
-offset_top = 597.0
-offset_right = 174.0
-offset_bottom = 609.0
-scale = Vector2(2, 2)
+[node name="MiniButtons" type="Control" parent="CanvasLayer/UI" unique_id=25709405]
+layout_mode = 1
+anchor_left = 0.124000005
+anchor_top = 0.90300006
+anchor_right = 0.41500002
+anchor_bottom = 0.98
+offset_left = 0.27600098
+offset_top = -0.24102783
+offset_right = 0.33496094
+offset_bottom = -0.05999756
+
+[node name="MinusButton" type="TextureButton" parent="CanvasLayer/UI/MiniButtons" unique_id=1036025218]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13100001
+anchor_top = 0.18
+anchor_right = 0.254
+anchor_bottom = 0.82000005
+offset_left = 5.114994
+offset_top = 1.0
+offset_right = 4.909996
+offset_bottom = 0.9999962
 texture_normal = ExtResource("8_oir36")
 texture_pressed = ExtResource("9_21v10")
 texture_hover = ExtResource("10_gnavp")
+stretch_mode = 0
 
-[node name="PlusButton" type="TextureButton" parent="CanvasLayer/UI/Control" unique_id=783548770]
-layout_mode = 0
-offset_left = 196.0
-offset_top = 597.0
-offset_right = 214.0
-offset_bottom = 609.0
-scale = Vector2(2, 2)
-texture_normal = ExtResource("11_54oau")
-texture_pressed = ExtResource("12_jxb1p")
-texture_hover = ExtResource("13_ouevh")
-
-[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/UI/Control" unique_id=1494652625]
-layout_mode = 0
-offset_left = 237.0
-offset_top = 597.0
-offset_right = 259.0
-offset_bottom = 609.0
-scale = Vector2(2, 2)
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer/UI/MiniButtons" unique_id=630093123]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13100001
+anchor_top = 0.18
+anchor_right = 0.254
+anchor_bottom = 0.82000005
+offset_left = 49.114994
+offset_top = 1.0
+offset_right = 57.909996
+offset_bottom = 0.9999962
 texture_normal = ExtResource("14_gw7rk")
 texture_pressed = ExtResource("15_wetf7")
 texture_hover = ExtResource("16_vnc0d")
 stretch_mode = 0
 
-[node name="TextureButton4" type="TextureButton" parent="CanvasLayer/UI/Control" unique_id=1610088824]
-layout_mode = 0
-offset_left = 287.0
-offset_top = 597.0
-offset_right = 306.0
-offset_bottom = 609.0
-scale = Vector2(2, 2)
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/UI/MiniButtons" unique_id=1977892464]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13100001
+anchor_top = 0.18
+anchor_right = 0.254
+anchor_bottom = 0.82000005
+offset_left = 103.11499
+offset_top = 1.0
+offset_right = 111.909996
+offset_bottom = 0.9999962
 texture_normal = ExtResource("17_vgu4w")
 texture_pressed = ExtResource("18_fg30y")
+texture_hover = ExtResource("18_21v10")
+stretch_mode = 0
+
+[node name="PlusButton" type="TextureButton" parent="CanvasLayer/UI/MiniButtons" unique_id=489928205]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13100001
+anchor_top = 0.18
+anchor_right = 0.254
+anchor_bottom = 0.82000005
+offset_left = 156.11499
+offset_top = 1.0
+offset_right = 155.91
+offset_bottom = 0.9999962
+texture_normal = ExtResource("11_54oau")
+texture_pressed = ExtResource("12_jxb1p")
+texture_hover = ExtResource("13_ouevh")
+stretch_mode = 0
 
 [connection signal="button_up" from="CanvasLayer/UI/OnOffButton" to="." method="_on_on_off_button_button_up"]
+[connection signal="pressed" from="CanvasLayer/UI/MiniButtons/MinusButton" to="." method="_on_minus_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/MiniButtons/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/MiniButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/MiniButtons/PlusButton" to="." method="_on_plus_button_pressed"]

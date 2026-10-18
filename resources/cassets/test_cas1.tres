@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://1ua5eqg4pgeb" path="res://scripts/casset.gd" id="1_st3hu"]
 [ext_resource type="Resource" uid="uid://b0ttqsriyvya1" path="res://resources/cassete_textures/texture5.tres" id="2_dj788"]
-[ext_resource type="VideoStream" uid="uid://ci68o5h0yhdqq" path="res://test_video/test1.ogv" id="2_esrwt"]
+[ext_resource type="VideoStream" uid="uid://df5y7lqth4vfq" path="res://test_video/TAPE1.ogv" id="3_dj788"]
 
 [resource]
 script = ExtResource("1_st3hu")
-video = ExtResource("2_esrwt")
+video = ExtResource("3_dj788")
 textures = ExtResource("2_dj788")
 name = "Test 1"
 metadata/_custom_type_script = "uid://1ua5eqg4pgeb"
