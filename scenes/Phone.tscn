@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bjbga7ee1lxx0"]
+
+[ext_resource type="Script" uid="uid://byleno3ngnhb" path="res://scripts/phone.gd" id="1_655yj"]
+[ext_resource type="Texture2D" uid="uid://djecnnk52kd0u" path="res://sprites/ui/phone/phone_back.png" id="2_dh71v"]
+
+[node name="Phone" type="Node2D" unique_id=192636998 node_paths=PackedStringArray("labels")]
+script = ExtResource("1_655yj")
+labels = [NodePath("CanvasLayer/Control/Tasks/Label"), NodePath("CanvasLayer/Control/Tasks/Label2"), NodePath("CanvasLayer/Control/Tasks/Label3"), NodePath("CanvasLayer/Control/Tasks/Label4"), NodePath("CanvasLayer/Control/Tasks/Label5")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=144165565]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=141590564]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=719036609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_dh71v")
+
+[node name="Tasks" type="Control" parent="CanvasLayer/Control" unique_id=1095922428]
+layout_mode = 1
+anchor_left = 0.372
+anchor_top = 0.273
+anchor_right = 0.633
+anchor_bottom = 0.52900004
+offset_left = -0.54400635
+offset_top = 0.09599304
+offset_right = -0.21600342
+offset_bottom = 0.2079773
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=1228758556]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99700004
+anchor_bottom = 0.187
+offset_right = -0.09701538
+offset_bottom = -0.042001724
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 5
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=2015157117]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.187
+anchor_right = 0.99700004
+anchor_bottom = 0.37300003
+offset_top = -0.042001724
+offset_right = -0.09701538
+offset_bottom = 0.08199692
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=886354365]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.37300003
+anchor_right = 0.99700004
+anchor_bottom = 0.56
+offset_top = 0.08199692
+offset_right = -0.09701538
+offset_bottom = 0.040000916
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=119029276]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.56
+anchor_right = 0.99700004
+anchor_bottom = 0.74700004
+offset_top = 0.040000916
+offset_right = -0.09701538
+offset_bottom = -0.0020065308
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=539285750]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.74700004
+anchor_right = 0.99700004
+anchor_bottom = 0.934
+offset_top = -0.0020065308
+offset_right = -0.09701538
+offset_bottom = -0.044006348
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://bbf32ti25hg0i"]
+
+[ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_dfi10"]
+
+[resource]
+script = ExtResource("1_dfi10")
+text = "Хахах привет пупс"
+metadata/_custom_type_script = "uid://du24yqs7yodcd"
