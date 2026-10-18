@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2gjvrdg88m4i"]
 
 [ext_resource type="PackedScene" uid="uid://cdphvu7e47wfy" path="res://scenes/Player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://b7rloifvluldo" path="res://scenes/tilemaps/tile_map.tscn" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://wxkydh5bma55" path="res://scenes/Cassete.tscn" id="2_0wfyh"]
 [ext_resource type="Resource" uid="uid://b1r12rspq420v" path="res://resources/cassets/test_cas1.tres" id="3_jyhfs"]
 [ext_resource type="Resource" uid="uid://lmexarpgk2ao" path="res://resources/cassets/test_cas2.tres" id="3_sugp2"]
@@ -12,6 +13,8 @@ script/source = "extends Node2D
 
 [node name="Main" type="Node2D" unique_id=1751049923]
 script = SubResource("GDScript_sgp6g")
+
+[node name="TileMap" parent="." unique_id=1186207912 instance=ExtResource("1_tefeu")]
 
 [node name="Player" parent="." unique_id=1453977623 instance=ExtResource("1_o5qli")]
 
