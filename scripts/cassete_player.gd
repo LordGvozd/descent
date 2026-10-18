@@ -19,10 +19,27 @@ func _update() -> void:
 			break
 		
 		btn.text = cassets[index].name
+		var textures = cassets[index].textures
+		
+		_set_button_texture(btn, "normal", textures.normal)
+		_set_button_texture(btn, "pressed", textures.pressed)
+		_set_button_texture(btn, "hover", textures.hover)
+		_set_button_texture(btn, "disabled", textures.disabled)
+		
 		btn.disabled = false
 		
 		btn.pressed.connect(func(): put_casset(cassets[index]))
 		
+func _set_button_texture(button, state: String, texture: Texture2D):
+	# 1. Берём текущий стиль кнопки (чтобы не потерять отступы из редактора)
+	var style = button.get_theme_stylebox(state).duplicate()
+	
+	# 2. Если это StyleBoxTexture — меняем картинку
+	if style is StyleBoxTexture:
+		style.texture = texture
+	
+	button.add_theme_stylebox_override(state, style)
+
 func put_casset(casset: Cassete):
 	$CanvasLayer/UI/VideoStreamPlayer.stream = casset.video
 	$CanvasLayer/UI/VideoStreamPlayer.play()
