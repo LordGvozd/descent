@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dgchlosv4fygs"]
+
+[ext_resource type="Shader" uid="uid://dl6naco811ghi" path="res://resources/shaders/interactable.gdshader" id="1_tkxvd"]
+
+[resource]
+shader = ExtResource("1_tkxvd")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)

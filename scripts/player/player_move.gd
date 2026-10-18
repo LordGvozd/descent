@@ -13,18 +13,18 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	
+
 	if not _can_move:
 		input_dir = Vector2.ZERO
-	
+
 	if _prev_dir == Vector2.ZERO and input_dir != Vector2.ZERO:
 		Bus.create_event(PlayerStartMove.new())
-		
+
 	if _prev_dir != Vector2.ZERO and input_dir == Vector2.ZERO:
 		Bus.create_event(PlayerStopMove.new())
-		
+
 	_prev_dir = input_dir
-	
+
 	velocity = input_dir * speed
-	
+
 	move_and_slide()

@@ -7,6 +7,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i12f4"]
 bg_color = Color(0.043137256, 0.078431375, 0.043137256, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2lda"]
+
 [node name="Terminal" type="Node2D" unique_id=630928521]
 script = ExtResource("1_enqfd")
 
@@ -46,6 +48,7 @@ theme_override_colors/caret_color = Color(0.07791694, 0.86057335, 0.08909524, 1)
 theme_override_colors/caret_background_color = Color(0.07791694, 0.86057335, 0.08909524, 1)
 theme_override_colors/font_color = Color(0.07791694, 0.86057335, 0.08909524, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_i12f4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y2lda")
 theme_override_colors/line_number_color = Color(0.07791694, 0.86057335, 0.08909524, 1)
 selecting_enabled = false
 caret_type = 1

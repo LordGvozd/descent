@@ -2,7 +2,13 @@
 extends Area2D
 class_name Interactable
 
+
 var _player_in: bool = false
+
+var _interactable_shader: ShaderMaterial = preload("res://shaders/interactable.tres")
+
+@onready var _sprite: Sprite2D = $Icon
+
 
 @abstract
 func interact() -> void
@@ -16,10 +22,11 @@ func _input(event: InputEvent) -> void:
 		interact()
 
 func _on_body_entered(body: Node2D) -> void:
-	print("Somesd")
 	if body.is_in_group("Player"):
+		_sprite.material = _interactable_shader
 		_player_in = true
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		_sprite.material = null
 		_player_in = false
