@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cj4gm5htsdi"]
+
+[ext_resource type="Script" uid="uid://drj058trxs4vv" path="res://scripts/terminal.gd" id="1_enqfd"]
+[ext_resource type="CodeHighlighter" uid="uid://si712emdfs7q" path="res://resources/code_highliter.tres" id="2_i12f4"]
+[ext_resource type="Texture2D" uid="uid://h8qi38tu18cn" path="res://sprites/ui/terminal/terminal_back.png" id="3_y2lda"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i12f4"]
+bg_color = Color(0.043137256, 0.078431375, 0.043137256, 1)
+
+[node name="Terminal" type="Node2D" unique_id=630928521]
+script = ExtResource("1_enqfd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=837077280]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=428092433]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI" unique_id=1879021637]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_y2lda")
+
+[node name="CodeEdit" type="CodeEdit" parent="CanvasLayer/UI" unique_id=509314635]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.266
+anchor_top = 0.068
+anchor_right = 0.76000005
+anchor_bottom = 0.51500005
+offset_left = -0.43200684
+offset_top = -0.06400299
+offset_right = 0.47991943
+offset_bottom = 0.27996826
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/caret_color = Color(0.07791694, 0.86057335, 0.08909524, 1)
+theme_override_colors/caret_background_color = Color(0.07791694, 0.86057335, 0.08909524, 1)
+theme_override_colors/font_color = Color(0.07791694, 0.86057335, 0.08909524, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_i12f4")
+theme_override_colors/line_number_color = Color(0.07791694, 0.86057335, 0.08909524, 1)
+selecting_enabled = false
+caret_type = 1
+caret_blink = true
+caret_blink_interval = 1.0
+caret_draw_when_editable_disabled = true
+caret_multiple = false
+syntax_highlighter = ExtResource("2_i12f4")
+highlight_all_occurrences = true
+symbol_lookup_on_click = true
+symbol_tooltip_on_hover = true
+line_folding = true
+gutters_draw_line_numbers = true
+gutters_line_numbers_min_digits = 1
+gutters_draw_fold_gutter = true
+code_completion_enabled = true
+indent_automatic = true
+auto_brace_completion_enabled = true
+
+[node name="Output" type="RichTextLabel" parent="CanvasLayer/UI" unique_id=1746542381]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 348.0
+offset_right = 874.0
+offset_bottom = 499.0
+
+[node name="RunBtn" type="Button" parent="CanvasLayer/UI" unique_id=1538338121]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86
+anchor_top = 0.85
+anchor_right = 0.86
+anchor_bottom = 0.85
+offset_left = 45.27997
+offset_top = -263.8
+offset_right = 134.27997
+offset_bottom = -214.79999
+text = "RUN"
+
+[connection signal="pressed" from="CanvasLayer/UI/RunBtn" to="." method="_on_run_btn_pressed"]

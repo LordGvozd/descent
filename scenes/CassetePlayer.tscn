@@ -11,11 +11,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob415"]
 size = Vector2(20, 23.282883)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxfog"]
-texture = ExtResource("4_oxqyh")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yupe4"]
+load_path = "res://.godot/imported/tape_button_out.png-2f5e4b6d367f630615aa5d758c48ddb3.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5ixj"]
+texture = SubResource("CompressedTexture2D_yupe4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxqyh"]
 texture = ExtResource("4_uqhpk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxfog"]
+texture = ExtResource("4_oxqyh")
 
 [node name="CassetePlayer" type="Area2D" unique_id=1953526610 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_spyam")
@@ -33,7 +39,6 @@ shape = SubResource("RectangleShape2D_ob415")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=641144624]
 
 [node name="UI" type="Control" parent="CanvasLayer" unique_id=1805130426]
-visible = false
 custom_minimum_size = Vector2(14.6, 20.28)
 layout_mode = 3
 anchor_right = 1.001
@@ -59,66 +64,74 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=902349238]
-layout_mode = 0
-offset_left = 780.0
-offset_top = 38.0
-offset_right = 1132.0
-offset_bottom = 109.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.5
+anchor_top = 0.95000005
+anchor_right = 28.300001
+anchor_bottom = 2.7250001
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a5ixj")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
 [node name="Button2" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=1799282625]
-layout_mode = 0
-offset_left = 780.0
-offset_top = 116.0
-offset_right = 1132.0
-offset_bottom = 187.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.5
+anchor_top = 2.9
+anchor_right = 28.300001
+anchor_bottom = 4.675
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
 [node name="Button3" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=2135862269]
-layout_mode = 0
-offset_left = 780.0
-offset_top = 192.0
-offset_right = 1132.0
-offset_bottom = 263.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.5
+anchor_top = 4.8
+anchor_right = 28.300001
+anchor_bottom = 6.5750003
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
 [node name="Button4" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=210325885]
-layout_mode = 0
-offset_left = 780.0
-offset_top = 271.0
-offset_right = 1132.0
-offset_bottom = 342.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.5
+anchor_top = 6.775
+anchor_right = 28.300001
+anchor_bottom = 8.55
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
 [node name="Button5" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=752399116]
-layout_mode = 0
-offset_left = 779.0
-offset_top = 347.0
-offset_right = 1131.0
-offset_bottom = 418.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.475
+anchor_top = 8.675
+anchor_right = 28.275002
+anchor_bottom = 10.450001
+offset_bottom = -3.0517578e-05
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")
 text = "Casset name"
 
 [node name="Button6" type="Button" parent="CanvasLayer/UI/CassetsButtons" unique_id=17088236]
-layout_mode = 0
-offset_left = 780.0
-offset_top = 423.0
-offset_right = 1132.0
-offset_bottom = 494.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.5
+anchor_top = 10.575001
+anchor_right = 28.300001
+anchor_bottom = 12.35
+offset_top = -3.0517578e-05
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_mxfog")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_oxqyh")

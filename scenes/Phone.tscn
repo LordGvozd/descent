@@ -10,7 +10,6 @@ labels = [NodePath("CanvasLayer/Control/Tasks/Label"), NodePath("CanvasLayer/Con
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=144165565]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=141590564]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
