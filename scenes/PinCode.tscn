@@ -1,0 +1,252 @@
+[gd_scene format=3 uid="uid://c1cri6vf66222"]
+
+[ext_resource type="Texture2D" uid="uid://d00pqmu2vji3" path="res://sprites/ui/pincode/klava_back.png" id="1_imn2m"]
+[ext_resource type="Script" uid="uid://dqie5ougt1l2c" path="res://scripts/pin_code.gd" id="1_io14k"]
+[ext_resource type="Texture2D" uid="uid://wkq4r00c5ixa" path="res://sprites/ui/pincode/klava_button.png" id="2_0ntvk"]
+[ext_resource type="Texture2D" uid="uid://c2rcnu8orxmff" path="res://sprites/ui/pincode/klava_button_pressed.png" id="3_6qxj4"]
+
+[node name="PinCode" type="Node2D" unique_id=943136355 node_paths=PackedStringArray("number_buttons", "delete_button", "ok_button")]
+script = ExtResource("1_io14k")
+number_buttons = [NodePath("CanvasLayer/UI/Buttons/0"), NodePath("CanvasLayer/UI/Buttons/1"), NodePath("CanvasLayer/UI/Buttons/2"), NodePath("CanvasLayer/UI/Buttons/3"), NodePath("CanvasLayer/UI/Buttons/4"), NodePath("CanvasLayer/UI/Buttons/5"), NodePath("CanvasLayer/UI/Buttons/6"), NodePath("CanvasLayer/UI/Buttons/7"), NodePath("CanvasLayer/UI/Buttons/8"), NodePath("CanvasLayer/UI/Buttons/9")]
+delete_button = NodePath("CanvasLayer/UI/Buttons/DELETE")
+ok_button = NodePath("CanvasLayer/UI/Buttons/OK")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1985202086]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=714807108]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI" unique_id=2139876836]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.97700006
+offset_right = -1.0
+offset_bottom = 13.926941
+texture = ExtResource("1_imn2m")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI" unique_id=689523298]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38300002
+anchor_top = 0.216
+anchor_right = 0.628
+anchor_bottom = 0.32200003
+offset_left = 0.40097046
+offset_top = -0.18400574
+offset_right = -0.08404541
+offset_bottom = 0.021987915
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Buttons" type="Control" parent="CanvasLayer/UI" unique_id=1376916865]
+layout_mode = 1
+anchor_left = 0.36200002
+anchor_top = 0.39900002
+anchor_right = 0.66
+anchor_bottom = 0.83100003
+offset_left = -0.38601685
+offset_top = 0.048980713
+offset_right = 0.019958496
+offset_bottom = -0.31903076
+
+[node name="1" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1338485961]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.093
+anchor_top = 0.086
+anchor_right = 0.23300001
+anchor_bottom = 0.25800002
+offset_left = 0.00799942
+offset_top = -0.07999992
+offset_right = 7.8479996
+offset_bottom = 7.7599945
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="2" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1062124957]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.086
+anchor_right = 0.45700002
+anchor_bottom = 0.25800002
+offset_left = -0.04800415
+offset_top = -0.07999992
+offset_right = 7.791992
+offset_bottom = 7.7599945
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="3" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1738416377]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.086
+anchor_right = 0.675
+anchor_bottom = 0.25800002
+offset_left = -0.040008545
+offset_top = -0.07999992
+offset_right = 7.800003
+offset_bottom = 7.7599945
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="4" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1767633501]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.093
+anchor_top = 0.30400002
+anchor_right = 0.23300001
+anchor_bottom = 0.476
+offset_left = 0.00799942
+offset_top = -0.12000275
+offset_right = 7.8479996
+offset_bottom = 7.720001
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="5" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1253522821]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.30400002
+anchor_right = 0.45700002
+anchor_bottom = 0.476
+offset_left = -0.04800415
+offset_top = -0.12000275
+offset_right = 7.791992
+offset_bottom = 7.720001
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="6" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1207178713]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.30400002
+anchor_right = 0.675
+anchor_bottom = 0.476
+offset_left = -0.040008545
+offset_top = -0.12000275
+offset_right = 7.800003
+offset_bottom = 7.720001
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="7" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=2023288996]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.093
+anchor_top = 0.536
+anchor_right = 0.23300001
+anchor_bottom = 0.708
+offset_left = 0.00799942
+offset_top = -0.08000183
+offset_right = 7.8479996
+offset_bottom = 7.7599945
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="8" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1154474845]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.536
+anchor_right = 0.45700002
+anchor_bottom = 0.708
+offset_left = -0.04800415
+offset_top = -0.08000183
+offset_right = 7.791992
+offset_bottom = 7.7599945
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="9" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1287596720]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.536
+anchor_right = 0.675
+anchor_bottom = 0.708
+offset_left = -0.040008545
+offset_top = -0.08000183
+offset_right = 7.800003
+offset_bottom = 7.7599945
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="DELETE" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1095512137]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.093
+anchor_top = 0.754
+anchor_right = 0.23300001
+anchor_bottom = 0.92600006
+offset_left = 0.00799942
+offset_top = -0.11999512
+offset_right = 7.8479996
+offset_bottom = 7.7199707
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="0" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=573112721]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.754
+anchor_right = 0.45700002
+anchor_bottom = 0.92600006
+offset_left = -0.04800415
+offset_top = -0.1199646
+offset_right = 7.791992
+offset_bottom = 7.7199707
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
+
+[node name="OK" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=436169535]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.754
+anchor_right = 0.675
+anchor_bottom = 0.92600006
+offset_left = -0.040008545
+offset_top = -0.11999512
+offset_right = 7.800003
+offset_bottom = 7.7199707
+scale = Vector2(0.8614401, 0.8614401)
+texture_normal = ExtResource("2_0ntvk")
+texture_pressed = ExtResource("3_6qxj4")
+stretch_mode = 0
