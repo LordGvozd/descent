@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lyonk8mv15ef"]
 
 [ext_resource type="Script" uid="uid://4ybovx1n1wxa" path="res://scripts/cassete_player.gd" id="1_spyam"]
-[ext_resource type="Texture2D" uid="uid://b5pdat6gtwr8h" path="res://icon.svg" id="2_mxfog"]
+[ext_resource type="Texture2D" uid="uid://ba48f85rvd7gh" path="res://sprites/environment/cas_player.png" id="2_yupe4"]
 [ext_resource type="Texture2D" uid="uid://c0sh42r38hrk1" path="res://sprites/ui/cassets_player/vhs_back.png" id="3_mxfog"]
 [ext_resource type="Texture2D" uid="uid://dubcyxh87lgx8" path="res://sprites/ui/cassets_player/tape_button_out.png" id="4_oxqyh"]
 [ext_resource type="Texture2D" uid="uid://cj08gn3tuxfgy" path="res://sprites/ui/cassets_player/tape_button_in.png" id="4_uqhpk"]
@@ -22,9 +22,8 @@ script = ExtResource("1_spyam")
 buttons = [NodePath("CanvasLayer/UI/CassetsButtons/Button"), NodePath("CanvasLayer/UI/CassetsButtons/Button2"), NodePath("CanvasLayer/UI/CassetsButtons/Button3"), NodePath("CanvasLayer/UI/CassetsButtons/Button4"), NodePath("CanvasLayer/UI/CassetsButtons/Button5"), NodePath("CanvasLayer/UI/CassetsButtons/Button6")]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=81332582]
-modulate = Color(1, 1, 0.23137255, 1)
-scale = Vector2(0.6807117, 0.6807117)
-texture = ExtResource("2_mxfog")
+scale = Vector2(2.8164768, 2.8164768)
+texture = ExtResource("2_yupe4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218284808]
 position = Vector2(0, -0.49999976)
@@ -34,6 +33,7 @@ shape = SubResource("RectangleShape2D_ob415")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=641144624]
 
 [node name="UI" type="Control" parent="CanvasLayer" unique_id=1805130426]
+visible = false
 custom_minimum_size = Vector2(14.6, 20.28)
 layout_mode = 3
 anchor_right = 1.001
