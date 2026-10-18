@@ -9,7 +9,7 @@ size = Vector2(10.205959, 7.0103283)
 [node name="Cassete" type="Area2D" unique_id=1912372171]
 script = ExtResource("1_7bqjt")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1827848488]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1827848488]
 scale = Vector2(2.6256328, 2.6256328)
 texture = ExtResource("2_g5ism")
 
