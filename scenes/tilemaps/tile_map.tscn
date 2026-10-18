@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b7rloifvluldo"]
 
 [ext_resource type="Texture2D" uid="uid://dekug3w7vac8u" path="res://sprites/tile/tile.png" id="1_0cyus"]
+[ext_resource type="Script" uid="uid://b3tpqfp6q4i3" path="res://scripts/door.gd" id="2_01buh"]
+[ext_resource type="PackedScene" uid="uid://cklkrgoxm7m6" path="res://scenes/environment/elevator.tscn" id="3_0jqw1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhclf"]
 texture = ExtResource("1_0cyus")
@@ -353,10 +355,33 @@ texture_region_size = Vector2i(32, 32)
 18:13/0 = 0
 19:13/0 = 0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0moq"]
+size = Vector2(34, 20)
+
+[sub_resource type="PackedScene" id="PackedScene_mr74u"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Door", "script", "Area2D", "shape", "CollisionShape2D"),
+"node_count": 2,
+"node_ids": PackedInt32Array(111437742, 1433541276),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 4, 2, -1, 1, 3, 1, 0),
+"variants": [ExtResource("2_01buh"), SubResource("RectangleShape2D_y0moq")],
+"version": 3
+}
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_01buh"]
+scenes/1/scene = SubResource("PackedScene_mr74u")
+scenes/2/scene = ExtResource("3_0jqw1")
+
 [sub_resource type="TileSet" id="TileSet_y0moq"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fhclf")
+sources/1 = SubResource("TileSetScenesCollectionSource_01buh")
 
 [node name="TileMap" type="TileMapLayer" unique_id=1186207912]
 y_sort_enabled = true

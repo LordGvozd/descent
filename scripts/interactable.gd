@@ -7,7 +7,9 @@ var _player_in: bool = false
 
 var _interactable_shader: ShaderMaterial = preload("res://shaders/interactable.tres")
 
-@onready var _sprite: Sprite2D = $Icon
+@onready var _sprite := $Sprite
+
+@export var outline_width: float = 0.5
 
 
 @abstract
@@ -16,6 +18,9 @@ func interact() -> void
 func _init() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+
+func _ready() -> void:
+	_interactable_shader.set_shader_parameter("width", outline_width)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and _player_in:

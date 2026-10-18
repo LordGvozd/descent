@@ -21,7 +21,7 @@ texture = ExtResource("4_uqhpk")
 script = ExtResource("1_spyam")
 buttons = [NodePath("CanvasLayer/UI/CassetsButtons/Button"), NodePath("CanvasLayer/UI/CassetsButtons/Button2"), NodePath("CanvasLayer/UI/CassetsButtons/Button3"), NodePath("CanvasLayer/UI/CassetsButtons/Button4"), NodePath("CanvasLayer/UI/CassetsButtons/Button5"), NodePath("CanvasLayer/UI/CassetsButtons/Button6")]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=81332582]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=81332582]
 scale = Vector2(2.8164768, 2.8164768)
 texture = ExtResource("2_yupe4")
 
