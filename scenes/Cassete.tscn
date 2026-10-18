@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://wxkydh5bma55"]
 
 [ext_resource type="Script" uid="uid://ugifq8mrb27a" path="res://scripts/cassete_node.gd" id="1_7bqjt"]
-[ext_resource type="Texture2D" uid="uid://b5pdat6gtwr8h" path="res://icon.svg" id="2_up6rf"]
+[ext_resource type="Texture2D" uid="uid://bseovoinki2eu" path="res://sprites/environment/cassete.png" id="2_g5ism"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_up6rf"]
+size = Vector2(10.205959, 7.0103283)
 
 [node name="Cassete" type="Area2D" unique_id=1912372171]
 script = ExtResource("1_7bqjt")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1827848488]
-modulate = Color(0.34407577, 0.34407574, 0.34407574, 1)
-scale = Vector2(0.5012655, 0.5012655)
-texture = ExtResource("2_up6rf")
+scale = Vector2(2.6256328, 2.6256328)
+texture = ExtResource("2_g5ism")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435177319]
 scale = Vector2(3.1354232, 3.1382267)
