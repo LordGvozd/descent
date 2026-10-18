@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dqaj7cqcjowvx" path="res://sprites/player/player_walk/enforcer_ up_walk1-sheet.png" id="5_khinc"]
 [ext_resource type="Texture2D" uid="uid://cyg737r5d64n2" path="res://sprites/player/player_idle/enforcer_ up_idle1-sheet.png" id="5_o4126"]
 [ext_resource type="Script" uid="uid://bro4eppqvlj8h" path="res://scripts/player/player_animations.gd" id="6_cw2d6"]
+[ext_resource type="Material" uid="uid://c8gj65yygxjgw" path="res://shaders/vhs.tres" id="11_d3wef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv10x"]
 atlas = ExtResource("3_6eyey")
@@ -575,3 +576,12 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Dinamo" parent="Body" unique_id=474029062 instance=ExtResource("4_83hs8")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348486661]
+
+[node name="VHSFilter" type="ColorRect" parent="CanvasLayer" unique_id=1557553697]
+material = ExtResource("11_d3wef")
+offset_left = -1.7967834
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 654.0
