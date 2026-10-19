@@ -4,7 +4,7 @@
 
 [resource]
 shader = ExtResource("1_qgjbb")
-shader_parameter/pixel_size = 4.8970001851075
+shader_parameter/pixel_size = 9.2650003925875
 shader_parameter/vhs_intensity = 0.0
-shader_parameter/noise_intensity = 0.0400000019
+shader_parameter/noise_intensity = 0.010000000475
 shader_parameter/opacity = 0.2210000104975
