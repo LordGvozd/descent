@@ -104,6 +104,7 @@ func add_cassete(event: CassetePickEvent) -> void:
 func interact() -> void:
 	Bus.create_event(OpenUIEvent.new())
 	
+	$Shader.visible = true
 	$CanvasLayer/UI/VideoStreamPlayer.stream = null
 	$CanvasLayer/UI.visible = true
 	_playing_casset = false
@@ -139,6 +140,8 @@ func _on_on_off_button_button_up() -> void:
 	await get_tree().create_timer(.8).timeout
 
 	$CanvasLayer/UI.visible = false
+	$Shader.visible = false
+
 	
 func _play_mini_btn_sound() -> void:
 	$MiniButtonsPlayer.stream = mini_buttons_sounds.pick_random()
