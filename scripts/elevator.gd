@@ -3,11 +3,23 @@ extends Interactable
 @onready var _animated_sprite: AnimatedSprite2D = $Sprite
 @onready var _collider: CollisionShape2D = $"StaticBody2D/CollisionShape2D"
 
+@export var pincode: String = "1337"
+
 enum State { CLOSED, OPENING, OPENED, CLOSING }
 var _state: State = State.CLOSED
+var _pin_code_entered: bool = false
 
+
+func _ready() -> void:
+	Bus.subscribe(PinCodeOKEvent, func(e): if e.code == pincode: _pin_code_entered = true)
 
 func interact() -> void:
+	if not _pin_code_entered:
+		var pincode_event = OpenPinCodeEvent.new()
+		pincode_event.code = pincode
+		Bus.create_event(pincode_event)
+		return
+		
 	if _state == State.CLOSED or _state == State.CLOSING:
 		_state = State.OPENING
 		_animated_sprite.play("opening")

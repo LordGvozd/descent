@@ -2,4 +2,5 @@ extends Node2D
 
 
 func _ready() -> void:
-	pass
+	Bus.subscribe(OpenUIEvent, func(e): $CanvasLayer.visible = false)
+	Bus.subscribe(CloseUIEvent, func(e): $CanvasLayer.visible = true)

@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://b514ymlybttrm"]
+
+[ext_resource type="Script" uid="uid://b2ttdhakncprx" path="res://scripts/scene_changer.gd" id="1_q61hg"]
+[ext_resource type="AudioStream" uid="uid://dg0f5iv08rvqj" path="res://audio/sounds/elevator/elevator_in.mp3" id="2_d2wsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obaip"]
+
+[sub_resource type="Animation" id="Animation_7m16w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q61hg"]
+resource_name = "fade_in"
+length = 7.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_d2wsl")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.01953888, 7.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d2wsl"]
+resource_name = "fade_out"
+length = 4.5666666
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.8499999,
+"start_offset": 0.0,
+"stream": ExtResource("2_d2wsl")
+}],
+"times": PackedFloat32Array(0.03333333)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.07333338, 3.6333334, 4.366667),
+"transitions": PackedFloat32Array(1, 1, 28.839956),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d2wsl"]
+_data = {
+&"RESET": SubResource("Animation_7m16w"),
+&"fade_in": SubResource("Animation_q61hg"),
+&"fade_out": SubResource("Animation_d2wsl")
+}
+
+[node name="SceneChanger" type="Area2D" unique_id=2073190688]
+script = ExtResource("1_q61hg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1798029658]
+scale = Vector2(2.4707289, 2.4707289)
+shape = SubResource("RectangleShape2D_obaip")
+debug_color = Color(0.62813026, 0.5310506, 3.85046e-07, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1635146685]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1027985656]
+libraries/ = SubResource("AnimationLibrary_d2wsl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1215028134]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1270678202]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=429506783]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

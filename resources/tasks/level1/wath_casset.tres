@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://bxnc1mp8y0y2l"]
+
+[ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_8wt01"]
+
+[resource]
+script = ExtResource("1_8wt01")
+text = "Wath tapes"
+metadata/_custom_type_script = "uid://du24yqs7yodcd"

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="OperationalSysytem" format=3 uid="uid://ccyv5fnerlatn"]
+
+[ext_resource type="Script" uid="uid://xv717fkc1p7t" path="res://scripts/os.gd" id="1_th21l"]
+
+[resource]
+script = ExtResource("1_th21l")
+env = Dictionary[String, Variant]({
+"x": 42
+})
+entred_code = "
+-- I forgot the PIN again.
+-- Recalculating it like always.
+--
+-- Algorithm:
+--  1. Take x (already in the env).
+--  2. Add 7.
+--  3. Multiply by 3.
+--  4. Remainder of division by 9000.
+--  5. Add 1000.
+--
+-- Result is a 4-digit number — the PIN.
+--
+-- Lua reminder to myself:
+--  remainder of division — %
+--  + add, - subtract
+--  * multiply, / divide
+--  ( ) work like in math
+--  print to console: print(...)
+-- 
+
+print(\"x is \", x)"
+metadata/_custom_type_script = "uid://xv717fkc1p7t"

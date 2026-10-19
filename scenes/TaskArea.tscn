@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://g0wl6xwqb7t7"]
+
+[ext_resource type="Script" uid="uid://b3knpqhhes0g4" path="res://scripts/task_area.gd" id="1_g0s7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0s7f"]
+size = Vector2(83, 83.5)
+
+[node name="TaskArea" type="Area2D" unique_id=235114731]
+script = ExtResource("1_g0s7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370880382]
+shape = SubResource("RectangleShape2D_g0s7f")
+debug_color = Color(4.0911136e-06, 0.64550835, 0.26523384, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,4 +1,10 @@
-extends Node2D
+extends Interactable
+class_name Terminal
+
+
+
+@export var os: OperationalSysytem
+
 
 @onready var code_edit = $CanvasLayer/UI/CodeEdit
 @onready var output = $CanvasLayer/UI/Output
@@ -15,6 +21,7 @@ extends Node2D
 var _is_open: bool = false
 
 func _ready():
+	print(os.env)
 	# Создать пустую тему
 	var invisible_theme = Theme.new()
 	var empty_style = StyleBoxEmpty.new()
@@ -25,9 +32,13 @@ func _ready():
 	code_edit.theme = invisible_theme
 	output.theme = invisible_theme
 	
+	code_edit.text = os.entred_code
+	
+func interact() -> void:
 	start()
 	
 func _input(event: InputEvent) -> void:
+	super._input(event)
 	if event is InputEventKey and event.pressed and _is_open:
 		if event.keycode == KEY_ENTER:
 			$ButtonSoundPlayer.stream = enter_sound.pick_random()
@@ -74,6 +85,10 @@ func _on_run_btn_pressed() -> void:
 		for arg in args:
 			parts.append(str(arg))
 		captured_output.append(" ".join(parts))
+	
+	for var_name in os.env.keys():
+		print(var_name, os.env[var_name])
+		lua.globals[var_name] = os.env[var_name]
 
 	var result = lua.do_string(player_code)
 	

@@ -9,7 +9,7 @@ size = Vector2(3.8272347, 2.5492105)
 [node name="Cassete" type="Area2D" unique_id=1912372171]
 script = ExtResource("1_7bqjt")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1827848488]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1827848488]
 texture = ExtResource("2_g5ism")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435177319]

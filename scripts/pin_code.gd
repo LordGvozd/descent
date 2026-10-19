@@ -34,6 +34,12 @@ func open_pincode(event: OpenPinCodeEvent):
 	Bus.create_event(OpenUIEvent.new())
 	_used_attempts = 0
 	max_attempts = event.attempts
+	code = event.code
+	$CanvasLayer/UI/Label.text = ""
+	target_code = []
+	for char in code:
+		target_code.append(int(char))
+		
 	$CanvasLayer/UI/Label.add_theme_color_override("font_color", Color.WHITE)
 	$CanvasLayer/UI.visible = true
 	
@@ -99,4 +105,9 @@ func check_code():
 	# ToDo: Add sound incorrect
 	
 	
-	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		Bus.create_event(CloseUIEvent.new())
+		$CanvasLayer/UI.visible = false
+		
+		

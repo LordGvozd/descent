@@ -1,0 +1,443 @@
+[gd_resource type="Resource" script_class="OperationalSysytem" format=3 uid="uid://dyyvxgy00ppfl"]
+
+[ext_resource type="Script" uid="uid://xv717fkc1p7t" path="res://scripts/os.gd" id="1_bdor6"]
+
+[resource]
+script = ExtResource("1_bdor6")
+env = Dictionary[String, Variant]({
+"db": [{
+"age": "52",
+"code": "482103",
+"id": "739204",
+"name": "John",
+"need_alive": "true",
+"position": "Base Commander",
+"surname": "Smith"
+}, {
+"age": "34",
+"code": "735018",
+"id": "184627",
+"name": "Emily",
+"need_alive": "true",
+"position": "Communications Officer",
+"surname": "Carter"
+}, {
+"age": "41",
+"code": "190742",
+"id": "562901",
+"name": "Michael",
+"need_alive": "false",
+"position": "Reactor Engineer",
+"surname": "Brown"
+}, {
+"age": "29",
+"code": "662495",
+"id": "918374",
+"name": "Sarah",
+"need_alive": "true",
+"position": "Logistics Coordinator",
+"surname": "Johnson"
+}, {
+"age": "38",
+"code": "508361",
+"id": "407285",
+"name": "David",
+"need_alive": "true",
+"position": "Security Chief",
+"surname": "Wilson"
+}, {
+"age": "45",
+"code": "917284",
+"id": "650193",
+"name": "Anna",
+"need_alive": "false",
+"position": "Medical Officer",
+"surname": "Taylor"
+}, {
+"age": "33",
+"code": "246857",
+"id": "283746",
+"name": "Robert",
+"need_alive": "true",
+"position": "Radio Technician",
+"surname": "Davis"
+}, {
+"age": "27",
+"code": "803519",
+"id": "794502",
+"name": "Laura",
+"need_alive": "true",
+"position": "Intelligence Analyst",
+"surname": "Martinez"
+}, {
+"age": "60",
+"code": "371926",
+"id": "351869",
+"name": "James",
+"need_alive": "false",
+"position": "Maintenance Supervisor",
+"surname": "Anderson"
+}, {
+"age": "22",
+"code": "529604",
+"id": "820417",
+"name": "Olivia",
+"need_alive": "true",
+"position": "Data Entry Clerk",
+"surname": "Thomas"
+}, {
+"age": "31",
+"code": "614873",
+"id": "615938",
+"name": "Daniel",
+"need_alive": "true",
+"position": "Armory Keeper",
+"surname": "Moore"
+}, {
+"age": "47",
+"code": "285391",
+"id": "472806",
+"name": "Sophia",
+"need_alive": "false",
+"position": "Cryptographer",
+"surname": "Clark"
+}, {
+"age": "26",
+"code": "942067",
+"id": "938175",
+"name": "Ethan",
+"need_alive": "true",
+"position": "Supply Runner",
+"surname": "Lewis"
+}, {
+"age": "39",
+"code": "507142",
+"id": "204763",
+"name": "Mia",
+"need_alive": "true",
+"position": "Air Filtration Engineer",
+"surname": "Walker"
+}, {
+"age": "54",
+"code": "368215",
+"id": "569284",
+"name": "Alexander",
+"need_alive": "false",
+"position": "Deputy Commander",
+"surname": "Hall"
+}, {
+"age": "23",
+"code": "819436",
+"id": "817395",
+"name": "Charlotte",
+"need_alive": "true",
+"position": "Radio Operator",
+"surname": "Young"
+}, {
+"age": "36",
+"code": "472680",
+"id": "346108",
+"name": "Benjamin",
+"need_alive": "true",
+"position": "Electrician",
+"surname": "King"
+}, {
+"age": "42",
+"code": "105973",
+"id": "782541",
+"name": "Amelia",
+"need_alive": "false",
+"position": "Records Officer",
+"surname": "Wright"
+}, {
+"age": "28",
+"code": "673814",
+"id": "195872",
+"name": "Lucas",
+"need_alive": "true",
+"position": "Plumber",
+"surname": "Scott"
+}, {
+"age": "50",
+"code": "924705",
+"id": "630294",
+"name": "Harper",
+"need_alive": "true",
+"position": "Kitchen Supervisor",
+"surname": "Green"
+}, {
+"age": "35",
+"code": "248159",
+"id": "871356",
+"name": "Henry",
+"need_alive": "false",
+"position": "Munitions Specialist",
+"surname": "Baker"
+}, {
+"age": "24",
+"code": "735028",
+"id": "249107",
+"name": "Evelyn",
+"need_alive": "true",
+"position": "Nurse",
+"surname": "Adams"
+}, {
+"age": "44",
+"code": "580342",
+"id": "503861",
+"name": "Jack",
+"need_alive": "true",
+"position": "Hydroponics Technician",
+"surname": "Nelson"
+}, {
+"age": "32",
+"code": "196473",
+"id": "716204",
+"name": "Abigail",
+"need_alive": "false",
+"position": "Psychologist",
+"surname": "Carter"
+}, {
+"age": "57",
+"code": "861204",
+"id": "385729",
+"name": "Owen",
+"need_alive": "false",
+"position": "Ventilation Chief",
+"surname": "Mitchell"
+}, {
+"age": "21",
+"code": "403785",
+"id": "920418",
+"name": "Ella",
+"need_alive": "true",
+"position": "Messenger",
+"surname": "Perez"
+}, {
+"age": "48",
+"code": "729516",
+"id": "647190",
+"name": "Samuel",
+"need_alive": "true",
+"position": "Watch Officer",
+"surname": "Roberts"
+}, {
+"age": "30",
+"code": "352847",
+"id": "158263",
+"name": "Grace",
+"need_alive": "true",
+"position": "Lab Assistant",
+"surname": "Turner"
+}, {
+"age": "63",
+"code": "914628",
+"id": "274915",
+"name": "Matthew",
+"need_alive": "false",
+"position": "Chief Mechanic",
+"surname": "Phillips"
+}, {
+"age": "25",
+"code": "687130",
+"id": "809372",
+"name": "Chloe",
+"need_alive": "true",
+"position": "Signals Analyst",
+"surname": "Campbell"
+}, {
+"age": "37",
+"code": "230584",
+"id": "462817",
+"name": "Thomas",
+"need_alive": "true",
+"position": "Perimeter Guard",
+"surname": "Evans"
+}, {
+"age": "29",
+"code": "741962",
+"id": "935604",
+"name": "Victoria",
+"need_alive": "false",
+"position": "Chemical Officer",
+"surname": "Collins"
+}, {
+"age": "46",
+"code": "815307",
+"id": "173928",
+"name": "Joseph",
+"need_alive": "true",
+"position": "Generator Operator",
+"surname": "Stewart"
+}, {
+"age": "22",
+"code": "362741",
+"id": "628415",
+"name": "Lily",
+"need_alive": "true",
+"position": "Archivist",
+"surname": "Sanchez"
+}, {
+"age": "55",
+"code": "908172",
+"id": "395071",
+"name": "Charles",
+"need_alive": "false",
+"position": "Chief of Staff",
+"surname": "Morris"
+}, {
+"age": "33",
+"code": "174628",
+"id": "740286",
+"name": "Zoe",
+"need_alive": "true",
+"position": "Weather Observer",
+"surname": "Rogers"
+}, {
+"age": "33",
+"code": "659203",
+"id": "283194",
+"name": "Thomas",
+"need_alive": "true",
+"position": "sysadmin",
+"surname": "Anderson"
+}, {
+"age": "26",
+"code": "485719",
+"id": "516728",
+"name": "Hannah",
+"need_alive": "false",
+"position": "Translator",
+"surname": "Cook"
+}, {
+"age": "51",
+"code": "793284",
+"id": "862409",
+"name": "George",
+"need_alive": "true",
+"position": "Armory Assistant",
+"surname": "Morgan"
+}, {
+"age": "24",
+"code": "218496",
+"id": "307186",
+"name": "Natalie",
+"need_alive": "true",
+"position": "Lab Technician",
+"surname": "Bell"
+}, {
+"age": "43",
+"code": "564820",
+"id": "694273",
+"name": "Edward",
+"need_alive": "false",
+"position": "Food Inspector",
+"surname": "Murphy"
+}, {
+"age": "28",
+"code": "831567",
+"id": "148539",
+"name": "Sofia",
+"need_alive": "true",
+"position": "Medical Assistant",
+"surname": "Anderson"
+}, {
+"age": "34",
+"code": "307915",
+"id": "725814",
+"name": "Thomas",
+"need_alive": "true",
+"position": "Radio Repairman",
+"surname": "Rivera"
+}, {
+"age": "19",
+"code": "642038",
+"id": "931650",
+"name": "Isabella",
+"need_alive": "true",
+"position": "Courier",
+"surname": "Cooper"
+}, {
+"age": "58",
+"code": "975421",
+"id": "406197",
+"name": "Andrew",
+"need_alive": "false",
+"position": "Chief Engineer",
+"surname": "Richardson"
+}, {
+"age": "31",
+"code": "128674",
+"id": "519283",
+"name": "Madison",
+"need_alive": "true",
+"position": "Security Dispatcher",
+"surname": "Cox"
+}, {
+"age": "49",
+"code": "860315",
+"id": "274680",
+"name": "Frank",
+"need_alive": "false",
+"position": "Diesel Technician",
+"surname": "Howard"
+}, {
+"age": "23",
+"code": "451796",
+"id": "638501",
+"name": "Aria",
+"need_alive": "true",
+"position": "Kitchen Worker",
+"surname": "Ward"
+}, {
+"age": "36",
+"code": "723184",
+"id": "185927",
+"name": "Patrick",
+"need_alive": "true",
+"position": "Deputy Security Chief",
+"surname": "Torres"
+}, {
+"age": "27",
+"code": "594270",
+"id": "807346",
+"name": "Ella",
+"need_alive": "false",
+"position": "Lab Courier",
+"surname": "Anderson"
+}]
+})
+entred_code = "-- All the brass left. Base commander,
+-- deputy, chief of staff -- gone.
+-- Even Thomas Anderson, our sysadmin,
+-- is gone. Nobody knows when he's back.
+--
+-- I need to get into the server room
+-- but the door needs HIS code.
+-- He's the only one with access.
+--
+-- I left instructions below so you
+-- can find his code yourself.
+--
+-- The employee database is called \"db\".
+-- Each record looks like this:
+--   { id = \"...\", name = \"...\",
+--     surname = \"...\", position = \"...\",
+--     age = \"...\", need_alive = \"...\",
+--     code = \"......\" }
+--
+-- Thomas Anderson is in there.
+-- Find his record and take his code.
+-- It's a 6-digit number.
+--
+-- Lua reminder to myself:
+--  loop over a list:
+--    for _, row in ipairs(db) do
+--      ...
+--    end
+--  how to use if statement:
+--    if row.name == \"NAME\" then
+--      ...
+--    end
+-- Good luck on your shift. Stay sharp."
+metadata/_custom_type_script = "uid://xv717fkc1p7t"

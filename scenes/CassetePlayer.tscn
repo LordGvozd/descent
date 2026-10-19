@@ -64,7 +64,7 @@ casset_input_sound = ExtResource("4_wetf7")
 off_on_sound = ExtResource("5_vnc0d")
 mini_buttons_sounds = Array[AudioStreamMP3]([ExtResource("6_fg30y"), ExtResource("7_hpqlv")])
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=81332582]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=81332582]
 texture = ExtResource("2_yupe4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218284808]

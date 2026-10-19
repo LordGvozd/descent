@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c85syvuojqc4d"]
+
+[ext_resource type="Script" uid="uid://dw37sdkhv84sp" path="res://scripts/task_cassete.gd" id="1_rllee"]
+
+[node name="TaskEvent" type="Node2D" unique_id=1604251131]
+script = ExtResource("1_rllee")

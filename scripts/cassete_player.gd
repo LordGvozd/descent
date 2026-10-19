@@ -94,6 +94,9 @@ func put_casset(index: int):
 	btn.disabled = true
 	_playing_casset = true
 	
+	var cassete_played_event = CassetePlayedEvent.new()
+	cassete_played_event.cassete = casset
+	Bus.create_event(cassete_played_event)
 		
 func add_cassete(event: CassetePickEvent) -> void:
 	var cassete = event.cassete

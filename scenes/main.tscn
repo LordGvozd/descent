@@ -4,10 +4,18 @@
 [ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b7rloifvluldo" path="res://scenes/tilemaps/tile_map.tscn" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://wxkydh5bma55" path="res://scenes/Cassete.tscn" id="2_0wfyh"]
-[ext_resource type="Resource" uid="uid://bbf32ti25hg0i" path="res://resources/tasks/first.tres" id="2_tipki"]
+[ext_resource type="Resource" uid="uid://bbf32ti25hg0i" path="res://resources/tasks/level1/look_around.tres" id="2_tipki"]
 [ext_resource type="Resource" uid="uid://b1r12rspq420v" path="res://resources/cassets/test_cas1.tres" id="3_jyhfs"]
 [ext_resource type="Resource" uid="uid://lmexarpgk2ao" path="res://resources/cassets/test_cas2.tres" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://lyonk8mv15ef" path="res://scenes/CassetePlayer.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://g0wl6xwqb7t7" path="res://scenes/TaskArea.tscn" id="9_85g3d"]
+[ext_resource type="Resource" uid="uid://bxnc1mp8y0y2l" path="res://resources/tasks/level1/wath_casset.tres" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://c85syvuojqc4d" path="res://scenes/TaskEvent.tscn" id="11_ya4ey"]
+[ext_resource type="Script" uid="uid://dkorvmw68ge3p" path="res://events/CassetePlayedEvent.gd" id="12_eb6dy"]
+[ext_resource type="Resource" uid="uid://dmrmflh1xkgnp" path="res://resources/tasks/level1/elevator.tres" id="13_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://c1cri6vf66222" path="res://scenes/PinCode.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://b514ymlybttrm" path="res://scenes/SceneChanger.tscn" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://bd3txwputwmbg" path="res://scenes/level2.tscn" id="16_jbj1t"]
 
 [sub_resource type="GDScript" id="GDScript_sgp6g"]
 script/source = "extends Node2D
@@ -21,6 +29,11 @@ func _ready() -> void:
 		Bus.create_event(e)
 "
 
+[sub_resource type="Resource" id="Resource_trceg"]
+script = ExtResource("12_eb6dy")
+cassete = ExtResource("3_jyhfs")
+metadata/_custom_type_script = "uid://dkorvmw68ge3p"
+
 [node name="Main" type="Node2D" unique_id=1751049923]
 script = SubResource("GDScript_sgp6g")
 start_tasks = Array[ExtResource("1_o6xl0")]([ExtResource("2_tipki")])
@@ -32,12 +45,34 @@ tile_map_data = PackedByteArray("AAACAPz/AAABAAMAAAACAP3/AAABAAMAAAACAP7/AAABAAM
 position = Vector2(94, -71)
 
 [node name="Cassete" parent="." unique_id=1912372171 instance=ExtResource("2_0wfyh")]
-position = Vector2(96, -152)
+position = Vector2(135, -95)
 cassete = ExtResource("3_jyhfs")
 
 [node name="Cassete2" parent="." unique_id=1977059646 instance=ExtResource("2_0wfyh")]
-position = Vector2(94, -123)
+position = Vector2(496, -158)
 cassete = ExtResource("3_sugp2")
 
 [node name="CassetePlayer" parent="." unique_id=1953526610 instance=ExtResource("5_tbgi4")]
-position = Vector2(475, 43)
+position = Vector2(432, -185)
+
+[node name="TaskAreas" type="Node2D" parent="." unique_id=1300949883]
+position = Vector2(496, -158)
+
+[node name="TaskArea" parent="TaskAreas" unique_id=235114731 instance=ExtResource("9_85g3d")]
+position = Vector2(-386, 38)
+rotation = 3.1415927
+scale = Vector2(7.2932086, -1.7155918)
+task = ExtResource("2_tipki")
+done_on = 1
+new_task = ExtResource("10_choun")
+
+[node name="TaskEvent" parent="TaskAreas" unique_id=1604251131 instance=ExtResource("11_ya4ey")]
+task = ExtResource("10_choun")
+target_event = SubResource("Resource_trceg")
+new_task = ExtResource("13_a8y0u")
+
+[node name="PinCode" parent="." unique_id=943136355 instance=ExtResource("13_trceg")]
+
+[node name="SceneChanger" parent="." unique_id=2073190688 instance=ExtResource("15_jkv2x")]
+position = Vector2(81, -238)
+scene = ExtResource("16_jbj1t")

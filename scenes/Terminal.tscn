@@ -20,6 +20,10 @@
 [ext_resource type="AudioStream" uid="uid://che7p2lb2y6vw" path="res://audio/sounds/terminal/buttons/kb6.mp3" id="11_gtdte"]
 [ext_resource type="AudioStream" uid="uid://dnid2p0v4bb5l" path="res://audio/sounds/terminal/stop_term.mp3" id="12_5mn5p"]
 [ext_resource type="Texture2D" uid="uid://bk8f5rqycar85" path="res://sprites/ui/cassets_player/console.png" id="14_5mn5p"]
+[ext_resource type="Texture2D" uid="uid://brrtp1i3egu3x" path="res://sprites/environment/terminal.png" id="21_etppt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etppt"]
+size = Vector2(34, 32.666668)
 
 [sub_resource type="Animation" id="Animation_gqmjq"]
 length = 0.001
@@ -140,17 +144,26 @@ shader_parameter/curvature = 2.0
 shader_parameter/scanline_count = 300.0
 shader_parameter/scanline_opacity = 0.15
 
-[node name="Terminal" type="Node2D" unique_id=630928521]
+[node name="Terminal" type="Area2D" unique_id=152449681]
 script = ExtResource("1_enqfd")
 work_sound = ExtResource("2_5gc51")
 enter_sound = Array[AudioStreamMP3]([ExtResource("3_nd1ck"), ExtResource("4_4rgxq"), ExtResource("5_e212h")])
 btn_sound = Array[AudioStreamMP3]([ExtResource("6_wdaqj"), ExtResource("7_5mn5p"), ExtResource("8_etppt"), ExtResource("9_vvi6i"), ExtResource("10_85erw"), ExtResource("11_gtdte")])
+metadata/_custom_type_script = "uid://drj058trxs4vv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1640954310]
+position = Vector2(-4.7683716e-07, 4.7683716e-07)
+shape = SubResource("RectangleShape2D_etppt")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1656899789]
+texture = ExtResource("21_etppt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1107257773]
 root_node = NodePath("../CanvasLayer/UI/Black")
 libraries/ = SubResource("AnimationLibrary_gqmjq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=837077280]
+visible = false
 
 [node name="UI" type="Control" parent="CanvasLayer" unique_id=428092433]
 layout_mode = 3

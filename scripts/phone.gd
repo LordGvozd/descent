@@ -9,6 +9,17 @@ var _is_open: bool = false
 
 func _ready() -> void:
 	Bus.subscribe(NewTaskEvent, func(e): set_task(e.task))
+	Bus.subscribe(TaskDoneEvent, func(e): _remove_task(e.task))
+
+func _remove_task(task: Task) -> void:
+	var index_to_remove = null
+	
+	for index in range(len(tasks)):
+		if tasks[index] == task:
+			index_to_remove = index
+	
+	if index_to_remove != null:
+		tasks.remove_at(index_to_remove)
 
 func _update() -> void:
 	for index in range(len(labels)):
