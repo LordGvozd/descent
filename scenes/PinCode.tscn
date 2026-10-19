@@ -2,14 +2,36 @@
 
 [ext_resource type="Texture2D" uid="uid://d00pqmu2vji3" path="res://sprites/ui/pincode/klava_back.png" id="1_imn2m"]
 [ext_resource type="Script" uid="uid://dqie5ougt1l2c" path="res://scripts/pin_code.gd" id="1_io14k"]
-[ext_resource type="Texture2D" uid="uid://wkq4r00c5ixa" path="res://sprites/ui/pincode/klava_button.png" id="2_0ntvk"]
 [ext_resource type="AudioStream" uid="uid://bqab0dieyya71" path="res://audio/sounds/pincode/pincode_buttton1.mp3" id="2_4ysuf"]
-[ext_resource type="Texture2D" uid="uid://c2rcnu8orxmff" path="res://sprites/ui/pincode/klava_button_pressed.png" id="3_6qxj4"]
 [ext_resource type="AudioStream" uid="uid://ch4672tumfk5w" path="res://audio/sounds/pincode/pincode_buttton2.mp3" id="3_68281"]
 [ext_resource type="FontFile" uid="uid://dog4xxt1yeq6t" path="res://fonts/edunline.ttf" id="3_j4751"]
 [ext_resource type="AudioStream" uid="uid://dhx5yq6npww38" path="res://audio/sounds/pincode/pincode_buttton3.mp3" id="4_w1hrt"]
 [ext_resource type="AudioStream" uid="uid://d1gdfa1xtjub6" path="res://audio/sounds/pincode/error.mp3" id="5_68281"]
+[ext_resource type="Texture2D" uid="uid://fkw2topgtov5" path="res://sprites/ui/cassets_player/1_button.png" id="9_tli6s"]
+[ext_resource type="Texture2D" uid="uid://dn8ogkvqwq43b" path="res://sprites/ui/cassets_player/1_button_pressed.png" id="10_onhbb"]
 [ext_resource type="AudioStream" uid="uid://brs48tttkp2a" path="res://audio/sounds/pincode/ok.mp3" id="10_w1hrt"]
+[ext_resource type="Texture2D" uid="uid://bg6r4id127uav" path="res://sprites/ui/cassets_player/4_button.png" id="11_4dd0e"]
+[ext_resource type="Texture2D" uid="uid://du33je7eid4wc" path="res://sprites/ui/cassets_player/7_button.png" id="11_4u05g"]
+[ext_resource type="Texture2D" uid="uid://7mqdudjrnl65" path="res://sprites/ui/cassets_player/del_button.png" id="11_32vrt"]
+[ext_resource type="Texture2D" uid="uid://5th2l7ebqedg" path="res://sprites/ui/cassets_player/6_button.png" id="11_731xn"]
+[ext_resource type="Texture2D" uid="uid://dxjq781cqfbpw" path="res://sprites/ui/cassets_player/5_button.png" id="11_dta55"]
+[ext_resource type="Texture2D" uid="uid://bt75x2pnlw2wr" path="res://sprites/ui/cassets_player/8_button.png" id="11_fxrfl"]
+[ext_resource type="Texture2D" uid="uid://dv7sgjpscupcw" path="res://sprites/ui/cassets_player/3_button.png" id="11_jgrk0"]
+[ext_resource type="Texture2D" uid="uid://lmlswjooa3la" path="res://sprites/ui/cassets_player/9_button.png" id="11_p6ll6"]
+[ext_resource type="Texture2D" uid="uid://dved8aui2snnv" path="res://sprites/ui/cassets_player/2_button.png" id="11_tli6s"]
+[ext_resource type="Texture2D" uid="uid://cpjlkeyxs0bxq" path="res://sprites/ui/cassets_player/0_button.png" id="11_xtp3b"]
+[ext_resource type="Texture2D" uid="uid://br5gn6tgs8efe" path="res://sprites/ui/cassets_player/7_button_pressed.png" id="12_80v0w"]
+[ext_resource type="Texture2D" uid="uid://c3tdnhig00xub" path="res://sprites/ui/cassets_player/9_button_pressed.png" id="12_apblt"]
+[ext_resource type="Texture2D" uid="uid://jsyxwqejjwcb" path="res://sprites/ui/cassets_player/8_button_pressed.png" id="12_d3yi8"]
+[ext_resource type="Texture2D" uid="uid://88jm0uhlewh" path="res://sprites/ui/cassets_player/0_button_pressed.png" id="12_ec6e6"]
+[ext_resource type="Texture2D" uid="uid://k22pfimy3xif" path="res://sprites/ui/cassets_player/3_button_pressed.png" id="12_h8yoo"]
+[ext_resource type="Texture2D" uid="uid://es288gwdljys" path="res://sprites/ui/cassets_player/2_button_pressed.png" id="12_onhbb"]
+[ext_resource type="Texture2D" uid="uid://cdddixhnphetx" path="res://sprites/ui/cassets_player/5_button_pressed.png" id="12_s7741"]
+[ext_resource type="Texture2D" uid="uid://bi0hl5owulv08" path="res://sprites/ui/cassets_player/6_button_pressed.png" id="12_t7yln"]
+[ext_resource type="Texture2D" uid="uid://33rqcwnb2j87" path="res://sprites/ui/cassets_player/del_button_pressed.png" id="12_tokar"]
+[ext_resource type="Texture2D" uid="uid://nl1unv7h7vkr" path="res://sprites/ui/cassets_player/4_button_pressed.png" id="12_yh4ms"]
+[ext_resource type="Texture2D" uid="uid://ddrdxrfi4er0g" path="res://sprites/ui/cassets_player/ок_button.png" id="13_wt6wi"]
+[ext_resource type="Texture2D" uid="uid://c6ft4oeasvbip" path="res://sprites/ui/cassets_player/ок_button_pressed.png" id="14_iohi2"]
 
 [node name="PinCode" type="Node2D" unique_id=943136355 node_paths=PackedStringArray("number_buttons", "delete_button", "ok_button")]
 script = ExtResource("1_io14k")
@@ -75,193 +97,193 @@ offset_bottom = -0.31903076
 [node name="1" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1338485961]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.093
+anchor_left = 0.22100002
 anchor_top = 0.086
-anchor_right = 0.23300001
+anchor_right = 0.36100003
 anchor_bottom = 0.25800002
-offset_left = 44.008
+offset_left = -0.024002075
 offset_top = -0.07999992
-offset_right = 51.848
+offset_right = 7.8159866
 offset_bottom = 7.7599945
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("9_tli6s")
+texture_pressed = ExtResource("10_onhbb")
 stretch_mode = 0
 
 [node name="2" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1062124957]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.317
+anchor_left = 0.44500002
 anchor_top = 0.086
-anchor_right = 0.45700002
+anchor_right = 0.58500004
 anchor_bottom = 0.25800002
-offset_left = 43.951996
+offset_left = -0.08000183
 offset_top = -0.07999992
-offset_right = 51.791992
+offset_right = 7.7599792
 offset_bottom = 7.7599945
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_tli6s")
+texture_pressed = ExtResource("12_onhbb")
 stretch_mode = 0
 
 [node name="3" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1738416377]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.535
+anchor_left = 0.66300005
 anchor_top = 0.086
-anchor_right = 0.675
+anchor_right = 0.80300003
 anchor_bottom = 0.25800002
-offset_left = 43.95999
+offset_left = -0.072021484
 offset_top = -0.07999992
-offset_right = 51.800003
+offset_right = 7.767975
 offset_bottom = 7.7599945
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_jgrk0")
+texture_pressed = ExtResource("12_h8yoo")
 stretch_mode = 0
 
 [node name="4" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1767633501]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.093
+anchor_left = 0.22100002
 anchor_top = 0.30400002
-anchor_right = 0.23300001
+anchor_right = 0.36100003
 anchor_bottom = 0.476
-offset_left = 44.008
+offset_left = -0.024002075
 offset_top = -0.12000275
-offset_right = 51.848
+offset_right = 7.8159866
 offset_bottom = 7.720001
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_4dd0e")
+texture_pressed = ExtResource("12_yh4ms")
 stretch_mode = 0
 
 [node name="5" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1253522821]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.317
+anchor_left = 0.44500002
 anchor_top = 0.30400002
-anchor_right = 0.45700002
+anchor_right = 0.58500004
 anchor_bottom = 0.476
-offset_left = 43.951996
+offset_left = -0.08000183
 offset_top = -0.12000275
-offset_right = 51.791992
+offset_right = 7.7599792
 offset_bottom = 7.720001
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_dta55")
+texture_pressed = ExtResource("12_s7741")
 stretch_mode = 0
 
 [node name="6" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1207178713]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.535
+anchor_left = 0.66300005
 anchor_top = 0.30400002
-anchor_right = 0.675
+anchor_right = 0.80300003
 anchor_bottom = 0.476
-offset_left = 43.95999
+offset_left = -0.072021484
 offset_top = -0.12000275
-offset_right = 51.800003
+offset_right = 7.767975
 offset_bottom = 7.720001
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_731xn")
+texture_pressed = ExtResource("12_t7yln")
 stretch_mode = 0
 
 [node name="7" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=2023288996]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.093
+anchor_left = 0.22100002
 anchor_top = 0.536
-anchor_right = 0.23300001
+anchor_right = 0.36100003
 anchor_bottom = 0.708
-offset_left = 44.008
+offset_left = -0.024002075
 offset_top = -0.08000183
-offset_right = 51.848
+offset_right = 7.8159866
 offset_bottom = 7.7599945
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_4u05g")
+texture_pressed = ExtResource("12_80v0w")
 stretch_mode = 0
 
 [node name="8" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1154474845]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.317
+anchor_left = 0.44500002
 anchor_top = 0.536
-anchor_right = 0.45700002
+anchor_right = 0.58500004
 anchor_bottom = 0.708
-offset_left = 43.951996
+offset_left = -0.08000183
 offset_top = -0.08000183
-offset_right = 51.791992
+offset_right = 7.7599792
 offset_bottom = 7.7599945
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_fxrfl")
+texture_pressed = ExtResource("12_d3yi8")
 stretch_mode = 0
 
 [node name="9" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1287596720]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.535
+anchor_left = 0.66300005
 anchor_top = 0.536
-anchor_right = 0.675
+anchor_right = 0.80300003
 anchor_bottom = 0.708
-offset_left = 43.95999
+offset_left = -0.072021484
 offset_top = -0.08000183
-offset_right = 51.800003
+offset_right = 7.767975
 offset_bottom = 7.7599945
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_p6ll6")
+texture_pressed = ExtResource("12_apblt")
 stretch_mode = 0
 
 [node name="DELETE" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=1095512137]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.093
+anchor_left = 0.22100002
 anchor_top = 0.754
-anchor_right = 0.23300001
+anchor_right = 0.36100003
 anchor_bottom = 0.92600006
-offset_left = 44.008
+offset_left = -0.024002075
 offset_top = -0.11999512
-offset_right = 51.848
+offset_right = 7.8159866
 offset_bottom = 7.7199707
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_32vrt")
+texture_pressed = ExtResource("12_tokar")
 stretch_mode = 0
 
 [node name="0" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=573112721]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.317
+anchor_left = 0.44500002
 anchor_top = 0.754
-anchor_right = 0.45700002
+anchor_right = 0.58500004
 anchor_bottom = 0.92600006
-offset_left = 43.951996
+offset_left = -0.08000183
 offset_top = -0.1199646
-offset_right = 51.791992
+offset_right = 7.7599792
 offset_bottom = 7.7199707
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("11_xtp3b")
+texture_pressed = ExtResource("12_ec6e6")
 stretch_mode = 0
 
 [node name="OK" type="TextureButton" parent="CanvasLayer/UI/Buttons" unique_id=436169535]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.535
+anchor_left = 0.66300005
 anchor_top = 0.754
-anchor_right = 0.675
+anchor_right = 0.80300003
 anchor_bottom = 0.92600006
-offset_left = 43.95999
+offset_left = -0.072021484
 offset_top = -0.11999512
-offset_right = 51.800003
+offset_right = 7.767975
 offset_bottom = 7.7199707
 scale = Vector2(0.8614401, 0.8614401)
-texture_normal = ExtResource("2_0ntvk")
-texture_pressed = ExtResource("3_6qxj4")
+texture_normal = ExtResource("13_wt6wi")
+texture_pressed = ExtResource("14_iohi2")
 stretch_mode = 0
 
 [node name="ErrorPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1156336256]

@@ -1,8 +1,54 @@
 extends Node2D
 
+@onready var code_edit = $CanvasLayer/UI/CodeEdit
+@onready var output = $CanvasLayer/UI/Output
+
+@onready var terminal_work_player = $AudioStreamPlayer2D
+
+@export var start_sound: AudioStreamMP3
+@export var work_sound: AudioStreamMP3
+@export var stop_sound: AudioStreamMP3
+
+@export var enter_sound: Array[AudioStreamMP3] = []
+@export var btn_sound: Array[AudioStreamMP3] = []
+
+var _is_open: bool = false
+
+func _ready():
+	# Создать пустую тему
+	var invisible_theme = Theme.new()
+	var empty_style = StyleBoxEmpty.new()
+	
+	# Установить пустой стиль для полосы прокрутки VScrollBar
+	invisible_theme.set_stylebox("scroll", "VScrollBar", empty_style)
+
+	code_edit.theme = invisible_theme
+	output.theme = invisible_theme
+	
+	start()
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and _is_open:
+		if event.keycode == KEY_ENTER:
+			$ButtonSoundPlayer.stream = enter_sound.pick_random()
+		else:
+			$ButtonSoundPlayer.stream = btn_sound.pick_random()
+		$ButtonSoundPlayer.play()
+
+func start():
+	_is_open = true
+	$CanvasLayer.visible = true
+	$Shader.visible = true
+	
+	$AnimationPlayer.play("fade_out")
+	await $AnimationPlayer.animation_finished
+	
+	terminal_work_player.stream = work_sound
+	terminal_work_player.play()
+
 
 func _on_run_btn_pressed() -> void:
-	var player_code: String = $CanvasLayer/UI/CodeEdit.text
+	var player_code: String = code_edit.text
 	
 	# В скрипте, где вы запускаете код игрока
 	var lua := LuaState.new()
@@ -24,4 +70,4 @@ func _on_run_btn_pressed() -> void:
 
 
 	for line in captured_output:
-		$CanvasLayer/UI/Output.text += ">>>   " +  line + "\n"
+		output.text += ">>>   " +  line + "\n"
