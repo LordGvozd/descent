@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://csvudrav57kle"]
+
+[ext_resource type="Script" uid="uid://nv0mhlf2yrot" path="res://addons/saltmire_transitions/demo/demo.gd" id="1"]
+
+[node name="Demo" type="Node2D" unique_id=1654820817]
+script = ExtResource("1")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1826297770]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.09, 0.11, 0.16, 1)
+
+[node name="Shape" type="Polygon2D" parent="." unique_id=2140955821]
+position = Vector2(640, 380)
+color = Color(0.42, 0.68, 1, 1)
+polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=144015424]
+
+[node name="Style" type="Label" parent="UI" unique_id=470118241]
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 1240.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 44
+text = "FADE"
+
+[node name="Hint" type="Label" parent="UI" unique_id=1137944284]
+offset_left = 40.0
+offset_top = 660.0
+offset_right = 1240.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 22
+text = "Saltmire Transitions — click or press Space to skip to the next style"
