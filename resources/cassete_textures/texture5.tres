@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CassetTexture" format=3 uid="uid://b0ttqsriyvya1"]
+
+[ext_resource type="Texture2D" uid="uid://cj08gn3tuxfgy" path="res://sprites/ui/cassets_player/tape_button_in.png" id="1_n1xk8"]
+[ext_resource type="Texture2D" uid="uid://qockd1x1vika" path="res://sprites/ui/cassets_player/tape_5_hovered.png" id="2_n1xk8"]
+[ext_resource type="Texture2D" uid="uid://bt2f4b7rfrrkl" path="res://sprites/ui/cassets_player/tape_5.png" id="3_6amr6"]
+[ext_resource type="Texture2D" uid="uid://04cbq6w5l1lh" path="res://sprites/ui/cassets_player/tape_5_pressed.png" id="4_bf7t0"]
+[ext_resource type="Script" uid="uid://bwyahuo4k87my" path="res://scripts/casset_texture.gd" id="5_24u5v"]
+
+[resource]
+script = ExtResource("5_24u5v")
+normal = ExtResource("3_6amr6")
+pressed = ExtResource("4_bf7t0")
+hover = ExtResource("2_n1xk8")
+disabled = ExtResource("1_n1xk8")
+metadata/_custom_type_script = "uid://bwyahuo4k87my"
