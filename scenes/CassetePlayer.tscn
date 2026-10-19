@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://d2jh5eeq5h3ap" path="res://sprites/ui/cassets_player/vhs_play_button.png" id="17_vgu4w"]
 [ext_resource type="Texture2D" uid="uid://c5tceatc1bf6u" path="res://sprites/ui/cassets_player/vhs_play_button_hovered.png" id="18_21v10"]
 [ext_resource type="Texture2D" uid="uid://b6qj646ea7uxp" path="res://sprites/ui/cassets_player/vhs_play_button_pressed.png" id="18_fg30y"]
+[ext_resource type="Shader" uid="uid://b875jyn24ekrw" path="res://shaders/crt.gdshader" id="29_hpqlv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob415"]
 size = Vector2(6.461317, 7.324951)
@@ -47,6 +48,12 @@ texture = ExtResource("4_uqhpk")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxfog"]
 texture = ExtResource("4_oxqyh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kgsiw"]
+shader = ExtResource("29_hpqlv")
+shader_parameter/curvature = 2.0
+shader_parameter/scanline_count = 300.0
+shader_parameter/scanline_opacity = 0.15
 
 [node name="CassetePlayer" type="Area2D" unique_id=1953526610 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_spyam")
@@ -362,6 +369,19 @@ texture_normal = ExtResource("11_54oau")
 texture_pressed = ExtResource("12_jxb1p")
 texture_hover = ExtResource("13_ouevh")
 stretch_mode = 0
+
+[node name="Shader" type="CanvasLayer" parent="." unique_id=1764389309]
+layer = 10
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Shader" unique_id=1648920485]
+material = SubResource("ShaderMaterial_kgsiw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="button_up" from="CanvasLayer/UI/OnOffButton" to="." method="_on_on_off_button_button_up"]
 [connection signal="pressed" from="CanvasLayer/UI/MiniButtons/MinusButton" to="." method="_on_minus_button_pressed"]

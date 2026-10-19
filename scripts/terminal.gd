@@ -31,6 +31,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and _is_open:
 		if event.keycode == KEY_ENTER:
 			$ButtonSoundPlayer.stream = enter_sound.pick_random()
+		elif event.keycode == KEY_ESCAPE:
+			stop()
 		else:
 			$ButtonSoundPlayer.stream = btn_sound.pick_random()
 		$ButtonSoundPlayer.play()
@@ -40,12 +42,23 @@ func start():
 	$CanvasLayer.visible = true
 	$Shader.visible = true
 	
+	Bus.create_event(OpenUIEvent.new())
+	
 	$AnimationPlayer.play("fade_out")
 	await $AnimationPlayer.animation_finished
 	
 	terminal_work_player.stream = work_sound
 	terminal_work_player.play()
 
+func stop():
+	$AnimationPlayer.play("fade_in")
+	await $AnimationPlayer.animation_finished
+	
+	_is_open = false
+	$CanvasLayer.visible = false
+	$Shader.visible = false
+	
+	Bus.create_event(CloseUIEvent.new())
 
 func _on_run_btn_pressed() -> void:
 	var player_code: String = code_edit.text
@@ -53,8 +66,7 @@ func _on_run_btn_pressed() -> void:
 	# В скрипте, где вы запускаете код игрока
 	var lua := LuaState.new()
 	lua.open_libraries() 
-
-
+	
 	var captured_output: Array[String] = []
 
 	lua.globals["print"] = func(...args):

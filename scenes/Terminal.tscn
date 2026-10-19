@@ -6,7 +6,6 @@
 [ext_resource type="CodeHighlighter" uid="uid://si712emdfs7q" path="res://resources/code_highliter.tres" id="2_i12f4"]
 [ext_resource type="FontFile" uid="uid://dld00n15ff70e" path="res://fonts/BigBlueTerm437NerdFont-Regular.ttf" id="3_8xblc"]
 [ext_resource type="AudioStream" uid="uid://dvy6m37r5v54e" path="res://audio/sounds/terminal/buttons/enter1.mp3" id="3_nd1ck"]
-[ext_resource type="Texture2D" uid="uid://h8qi38tu18cn" path="res://sprites/ui/terminal/terminal_back.png" id="3_y2lda"]
 [ext_resource type="AudioStream" uid="uid://qsrpaus584if" path="res://audio/sounds/terminal/buttons/enter2.mp3" id="4_4rgxq"]
 [ext_resource type="Texture2D" uid="uid://dx8eqdtu6piwm" path="res://sprites/ui/cassets_player/run_button.png" id="5_0y56k"]
 [ext_resource type="AudioStream" uid="uid://2sbwrbauxum7" path="res://audio/sounds/terminal/buttons/enter3.mp3" id="5_e212h"]
@@ -19,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://c7185x30e7ota" path="res://audio/sounds/terminal/buttons/kb4.mp3" id="9_vvi6i"]
 [ext_resource type="AudioStream" uid="uid://b15yw3fyp3m6s" path="res://audio/sounds/terminal/buttons/kb5.mp3" id="10_85erw"]
 [ext_resource type="AudioStream" uid="uid://che7p2lb2y6vw" path="res://audio/sounds/terminal/buttons/kb6.mp3" id="11_gtdte"]
+[ext_resource type="AudioStream" uid="uid://dnid2p0v4bb5l" path="res://audio/sounds/terminal/stop_term.mp3" id="12_5mn5p"]
+[ext_resource type="Texture2D" uid="uid://bk8f5rqycar85" path="res://sprites/ui/cassets_player/console.png" id="14_5mn5p"]
 
 [sub_resource type="Animation" id="Animation_gqmjq"]
 length = 0.001
@@ -45,6 +46,37 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wdaqj"]
+resource_name = "fade_in"
+length = 3.0333333
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_5mn5p")
+}],
+"times": PackedFloat32Array(0.06666667)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_81bfu"]
@@ -93,6 +125,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gqmjq"]
 _data = {
 &"RESET": SubResource("Animation_gqmjq"),
+&"fade_in": SubResource("Animation_wdaqj"),
 &"fade_out": SubResource("Animation_81bfu")
 }
 
@@ -134,19 +167,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_y2lda")
+texture = ExtResource("14_5mn5p")
 
 [node name="CodeEdit" type="CodeEdit" parent="CanvasLayer/UI" unique_id=509314635]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.266
-anchor_top = 0.068
-anchor_right = 0.76000005
-anchor_bottom = 0.51500005
-offset_left = 1.5679932
-offset_top = 17.935997
-offset_right = 2.4799194
-offset_bottom = 9.279968
+anchor_left = 0.19500001
+anchor_top = 0.096
+anchor_right = 0.832
+anchor_bottom = 0.58000004
+offset_left = 0.35998535
+offset_top = -0.20800018
+offset_right = 0.53601074
+offset_bottom = 0.15997314
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/caret_color = Color(0.8509804, 0.49411765, 0.14901961, 1)
@@ -178,25 +211,30 @@ indent_automatic = true
 auto_brace_completion_enabled = true
 
 [node name="Output" type="RichTextLabel" parent="CanvasLayer/UI" unique_id=1746542381]
-layout_mode = 0
-offset_left = 308.0
-offset_top = 352.0
-offset_right = 874.0
-offset_bottom = 499.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19500001
+anchor_top = 0.651
+anchor_right = 0.83500004
+anchor_bottom = 0.901
+offset_left = 0.35998535
+offset_top = 0.15197754
+offset_right = 0.079956055
+offset_bottom = 0.15197754
 theme_override_colors/default_color = Color(0.8509804, 0.49411765, 0.14901961, 1)
 theme_override_fonts/normal_font = ExtResource("3_8xblc")
 
 [node name="RunBtn" type="TextureButton" parent="CanvasLayer/UI" unique_id=2531252]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.86
-anchor_top = 0.85
-anchor_right = 0.86
-anchor_bottom = 0.85
-offset_left = -221.72003
-offset_top = -287.8
-offset_right = -132.72003
-offset_bottom = -238.79999
+anchor_left = 0.758
+anchor_top = 0.50600004
+anchor_right = 0.83500004
+anchor_bottom = 0.582
+offset_left = -0.21600342
+offset_top = 0.111968994
+offset_right = 0.079956055
+offset_bottom = -0.13601685
 texture_normal = ExtResource("5_0y56k")
 texture_pressed = ExtResource("6_81bfu")
 texture_hover = ExtResource("6_w8bg2")
@@ -205,14 +243,14 @@ stretch_mode = 0
 [node name="Black" type="ColorRect" parent="CanvasLayer/UI" unique_id=1708438950]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.246
-anchor_top = 0.054
-anchor_right = 0.77300006
-anchor_bottom = 0.79300004
-offset_left = -0.3919983
-offset_top = 0.00799942
-offset_right = 0.50390625
-offset_bottom = 0.13598633
+anchor_left = 0.16100001
+anchor_top = 0.034
+anchor_right = 0.86300004
+anchor_bottom = 0.94600004
+offset_left = 0.5279846
+offset_top = -0.032001495
+offset_right = -0.17602539
+offset_bottom = -0.0079956055
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
