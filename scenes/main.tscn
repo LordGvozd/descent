@@ -36,7 +36,7 @@ position = Vector2(96, -152)
 cassete = ExtResource("3_jyhfs")
 
 [node name="Cassete2" parent="." unique_id=1977059646 instance=ExtResource("2_0wfyh")]
-position = Vector2(787, -147)
+position = Vector2(94, -123)
 cassete = ExtResource("3_sugp2")
 
 [node name="CassetePlayer" parent="." unique_id=1953526610 instance=ExtResource("5_tbgi4")]
