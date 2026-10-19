@@ -19,7 +19,7 @@ func interact() -> void
 func _init() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
-	
+
 	Bus.subscribe(OpenUIEvent, func(e): _ui_opened = true)
 	Bus.subscribe(CloseUIEvent, func(e): _ui_opened = false)
 

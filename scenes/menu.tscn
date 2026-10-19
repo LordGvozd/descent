@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://c4wbifxvbi6ag"]
+
+[ext_resource type="Script" uid="uid://kx4cbqx4n84d" path="res://scripts/menu.gd" id="1_g3eks"]
+[ext_resource type="Texture2D" uid="uid://b855eki8dugbt" path="res://sprites/ui/menu/menu.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://cv3ug3cr1pql0" path="res://sprites/ui/menu/menu_play_button.png" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://d16w4c4ahj30r" path="res://sprites/ui/menu/menu_play_button_hover.png" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://derikdsqgx0yu" path="res://sprites/ui/menu/menu_settings_button.png" id="4_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://12hxnawmdirf" path="res://sprites/ui/menu/menu_settings_button_hover.png" id="5_g3eks"]
+[ext_resource type="Texture2D" uid="uid://bdt5qurweb7iu" path="res://sprites/ui/menu/arrow.png" id="6_g3eks"]
+[ext_resource type="FontFile" uid="uid://dld00n15ff70e" path="res://fonts/BigBlueTerm437NerdFont-Regular.ttf" id="7_v86rl"]
+[ext_resource type="AudioStream" uid="uid://jb8aj6bnrmen" path="res://audio/sounds/terminal/ambient.mp3" id="8_13sgg"]
+[ext_resource type="AudioStream" uid="uid://besbdv5vc038" path="res://audio/sounds/menu/beep.wav" id="8_i6lef"]
+
+[sub_resource type="Theme" id="Theme_g3eks"]
+default_font = ExtResource("7_v86rl")
+default_font_size = 19
+
+[sub_resource type="Animation" id="Animation_v86rl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_13sgg"]
+resource_name = "typewriter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6lef"]
+_data = {
+&"RESET": SubResource("Animation_v86rl"),
+&"typewriter": SubResource("Animation_13sgg")
+}
+
+[sub_resource type="Theme" id="Theme_i6lef"]
+default_font = ExtResource("7_v86rl")
+default_font_size = 27
+
+[node name="Menu" type="Control" unique_id=2068815935 node_paths=PackedStringArray("buttons", "log_label", "main_ui", "settings_panel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3eks")
+buttons = [NodePath("Main/PlayButton"), NodePath("Main/SettingsButton")]
+log_label = NodePath("LogLabel")
+log_paragraph_delay = 1.5
+play_button_log = "res://resources/menu_logs/play.txt"
+settings_button_log = "res://resources/menu_logs/settings.txt"
+play_scene = "uid://d2gjvrdg88m4i"
+main_ui = NodePath("Main")
+settings_panel = NodePath("Settings")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1912057993]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("1_yqeox")
+
+[node name="LogLabel" type="Label" parent="." unique_id=613665261]
+modulate = Color(0.9607843, 0.5294118, 0.12156863, 1)
+layout_mode = 0
+offset_left = 299.0
+offset_top = 395.0
+offset_right = 902.0
+offset_bottom = 527.0
+theme = SubResource("Theme_g3eks")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1236809696]
+
+[node name="BlockDisplayedAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=553622484]
+stream = ExtResource("8_i6lef")
+volume_db = -25.0
+
+[node name="AmbientAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1914941661]
+stream = ExtResource("8_13sgg")
+volume_db = -15.0
+autoplay = true
+parameters/looping = true
+
+[node name="LogAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1608328312]
+libraries/ = SubResource("AnimationLibrary_i6lef")
+
+[node name="Settings" type="Control" parent="." unique_id=1642187117]
+visible = false
+anchors_preset = 0
+
+[node name="HSlider" type="HSlider" parent="Settings" unique_id=888355386]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 117.0
+offset_right = 848.0
+offset_bottom = 149.0
+step = 25.0
+
+[node name="Label" type="Label" parent="Settings" unique_id=1345920524]
+modulate = Color(0.9607843, 0.5294118, 0.12156863, 1)
+layout_mode = 0
+offset_left = 385.0
+offset_top = 163.0
+offset_right = 853.0
+offset_bottom = 329.0
+theme = SubResource("Theme_i6lef")
+text = "\"WASD\" - MOVE
+\"E\"    - INTERACT
+
+A GAME BY \"LOGOVO STUDIOS\""
+
+[node name="BackButton" type="TextureButton" parent="Settings" unique_id=590356475]
+modulate = Color(0.9607843, 0.5294118, 0.12156863, 1)
+layout_mode = 0
+offset_left = 576.0
+offset_top = 302.0
+offset_right = 616.0
+offset_bottom = 342.0
+texture_normal = ExtResource("6_g3eks")
+flip_h = true
+
+[node name="Main" type="Control" parent="." unique_id=584977679]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="TextureButton" parent="Main" unique_id=1069839989]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 162.0
+offset_right = 699.0
+offset_bottom = 220.0
+texture_normal = ExtResource("2_con2f")
+texture_hover = ExtResource("3_mhnvy")
+stretch_mode = 4
+
+[node name="SettingsButton" type="TextureButton" parent="Main" unique_id=1147744759]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 224.0
+offset_right = 715.0
+offset_bottom = 280.0
+texture_normal = ExtResource("4_4ytvr")
+texture_hover = ExtResource("5_g3eks")
+stretch_mode = 4
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Settings/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Main/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Main/SettingsButton" to="." method="_on_settings_button_pressed"]
