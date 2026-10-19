@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://byleno3ngnhb" path="res://scripts/phone.gd" id="1_655yj"]
 [ext_resource type="Texture2D" uid="uid://djecnnk52kd0u" path="res://sprites/ui/phone/phone_back.png" id="2_dh71v"]
+[ext_resource type="FontFile" uid="uid://dam7t1bdneoti" path="res://fonts/fs-pixel-sans-unicode-regular.ttf" id="3_ypxwd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ypxwd"]
+line_spacing = -13.705
+font_size = 40
+font_color = Color(0.1882353, 0.20392157, 0.13333334, 1)
 
 [node name="Phone" type="Node2D" unique_id=192636998 node_paths=PackedStringArray("labels")]
 script = ExtResource("1_655yj")
-labels = [NodePath("CanvasLayer/Control/Tasks/Label"), NodePath("CanvasLayer/Control/Tasks/Label2"), NodePath("CanvasLayer/Control/Tasks/Label3"), NodePath("CanvasLayer/Control/Tasks/Label4"), NodePath("CanvasLayer/Control/Tasks/Label5")]
+labels = [NodePath("CanvasLayer/Control/Tasks/Label"), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=144165565]
 
@@ -38,62 +44,32 @@ offset_bottom = 0.2079773
 [node name="Label" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=1228758556]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.99700004
-anchor_bottom = 0.187
-offset_right = -0.09701538
-offset_bottom = -0.042001724
-vertical_alignment = 1
+anchor_top = -0.102000006
+anchor_right = 1.0
+anchor_bottom = 0.41000003
+offset_left = -1.0
+offset_top = -0.067998886
+offset_right = -2.0
+offset_bottom = -0.060005188
+theme_override_colors/font_color = Color(0.1882353, 0.20392157, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_ypxwd")
+theme_override_font_sizes/font_size = 40
+label_settings = SubResource("LabelSettings_ypxwd")
 clip_text = true
 text_overrun_behavior = 5
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=2015157117]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=1043947946]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.187
+anchor_top = 0.41000003
 anchor_right = 0.99700004
-anchor_bottom = 0.37300003
-offset_top = -0.042001724
+anchor_bottom = 0.994
+offset_top = -0.060005188
 offset_right = -0.09701538
-offset_bottom = 0.08199692
-vertical_alignment = 1
-autowrap_mode = 3
+offset_bottom = -0.0039978027
+theme_override_colors/font_color = Color(0.1882353, 0.20392157, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_ypxwd")
+theme_override_font_sizes/font_size = 40
+label_settings = SubResource("LabelSettings_ypxwd")
 clip_text = true
-
-[node name="Label3" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=886354365]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.37300003
-anchor_right = 0.99700004
-anchor_bottom = 0.56
-offset_top = 0.08199692
-offset_right = -0.09701538
-offset_bottom = 0.040000916
-vertical_alignment = 1
-autowrap_mode = 3
-clip_text = true
-
-[node name="Label4" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=119029276]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.56
-anchor_right = 0.99700004
-anchor_bottom = 0.74700004
-offset_top = 0.040000916
-offset_right = -0.09701538
-offset_bottom = -0.0020065308
-vertical_alignment = 1
-autowrap_mode = 3
-clip_text = true
-
-[node name="Label5" type="Label" parent="CanvasLayer/Control/Tasks" unique_id=539285750]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.74700004
-anchor_right = 0.99700004
-anchor_bottom = 0.934
-offset_top = -0.0020065308
-offset_right = -0.09701538
-offset_bottom = -0.044006348
-vertical_alignment = 1
-autowrap_mode = 3
-clip_text = true
+text_overrun_behavior = 5

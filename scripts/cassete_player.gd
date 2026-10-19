@@ -60,12 +60,14 @@ func _input_casset():
 		_update()
 		_playing_casset = false
 		
+		$CanvasLayer/UI/VideoStreamPlayer.paused = false
 		$CanvasLayer/UI/mouth_open.visible = true
 		$CanvasLayer/UI/VideoStreamPlayer.stream = default_video
 		$CanvasLayer/UI/VideoStreamPlayer.play()
+		
 
 func put_casset(index: int):
-	_input_casset()
+	await _input_casset()
 
 					
 	$CanvasLayer/UI/mouth_open.visible = true
@@ -105,6 +107,7 @@ func interact() -> void:
 	$CanvasLayer/UI/VideoStreamPlayer.stream = null
 	$CanvasLayer/UI.visible = true
 	_playing_casset = false
+	$CanvasLayer/UI/VideoStreamPlayer.paused = false
 	_update()
 	
 	$CassetSoundsPlayer.stream = off_on_sound
