@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://b8r4t3eid3hx5"]
+
+[ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_oyk2g"]
+
+[resource]
+script = ExtResource("1_oyk2g")
+text = "Take folder with docs"
+metadata/_custom_type_script = "uid://du24yqs7yodcd"

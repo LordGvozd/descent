@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://dcabcd2f3y4o8"]
+
+[ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_qq8a1"]
+
+[resource]
+script = ExtResource("1_qq8a1")
+text = "No signal"
+metadata/_custom_type_script = "uid://du24yqs7yodcd"
