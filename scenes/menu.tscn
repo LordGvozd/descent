@@ -116,6 +116,7 @@ offset_top = 117.0
 offset_right = 848.0
 offset_bottom = 149.0
 step = 25.0
+value = 50.0
 
 [node name="Label" type="Label" parent="Settings" unique_id=1345920524]
 modulate = Color(0.9607843, 0.5294118, 0.12156863, 1)
