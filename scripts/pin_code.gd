@@ -73,6 +73,7 @@ func delete_last():
 func check_code():
 	_play_sound()
 	await get_tree().create_timer(.2).timeout
+	print(target_code, _entered_numbers)
 	if target_code == _entered_numbers:
 		$CanvasLayer/UI/Label.add_theme_color_override("font_color", succes_color)
 		$ErrorPlayer.stream = success_sound
@@ -81,6 +82,8 @@ func check_code():
 		var event = PinCodeOKEvent.new()
 		event.code = code
 		Bus.create_event(event)
+		target_code = []
+		_entered_numbers = []
 		close_pincode()
 		return
 	
@@ -102,7 +105,6 @@ func check_code():
 		return
 	
 	_used_attempts += 1
-	# ToDo: Add sound incorrect
 	
 	
 func _input(event: InputEvent) -> void:

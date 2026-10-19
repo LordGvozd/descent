@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://daaud0ccbssq8" path="res://scripts/player/player_move.gd" id="2_wnvi2"]
 [ext_resource type="Texture2D" uid="uid://b6vydhs4f55ui" path="res://sprites/player/player_idle/enforcer_down_idle1-sheet.png" id="3_6eyey"]
 [ext_resource type="Texture2D" uid="uid://cc1k8juoptyb7" path="res://sprites/player/player_walk/enforcer_down_walk1-sheet.png" id="3_70d11"]
-[ext_resource type="PackedScene" uid="uid://b5bgc505y7br8" path="res://scenes/Dinamo.tscn" id="4_83hs8"]
 [ext_resource type="Texture2D" uid="uid://jcvh6gri12gg" path="res://sprites/player/player_walk/enforcer_ front_walk1-sheet.png" id="4_cw2d6"]
 [ext_resource type="Texture2D" uid="uid://dlcqwu5yrri41" path="res://sprites/player/player_idle/enforcer_ front_idle1-sheet.png" id="4_d3wef"]
 [ext_resource type="Texture2D" uid="uid://dqaj7cqcjowvx" path="res://sprites/player/player_walk/enforcer_ up_walk1-sheet.png" id="5_khinc"]
@@ -555,6 +554,7 @@ radius = 6.0
 height = 26.0
 
 [node name="Player" type="Node2D" unique_id=1453977623]
+y_sort_enabled = true
 script = ExtResource("1_ulp21")
 
 [node name="Body" type="CharacterBody2D" parent="." unique_id=1530978144 groups=["Player"]]
@@ -575,8 +575,6 @@ shape = SubResource("CapsuleShape2D_6eyey")
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
-
-[node name="Dinamo" parent="Body" unique_id=474029062 instance=ExtResource("4_83hs8")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348486661]
 

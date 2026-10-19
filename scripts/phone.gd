@@ -15,11 +15,14 @@ func _remove_task(task: Task) -> void:
 	var index_to_remove = null
 	
 	for index in range(len(tasks)):
-		if tasks[index] == task:
+		if tasks[index].text == task.text:
 			index_to_remove = index
-	
+
 	if index_to_remove != null:
 		tasks.remove_at(index_to_remove)
+		for index in range(len(labels)):
+			labels[index].text = ""
+				
 
 func _update() -> void:
 	for index in range(len(labels)):

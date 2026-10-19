@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://dwb8hsyevy1tv"]
+
+[ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_hkiix"]
+
+[resource]
+script = ExtResource("1_hkiix")
+text = "Figure out the PIN code"
+metadata/_custom_type_script = "uid://du24yqs7yodcd"

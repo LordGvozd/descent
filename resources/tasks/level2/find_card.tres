@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://brkhir0v36not"]
+
+[ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_7hgof"]
+
+[resource]
+script = ExtResource("1_7hgof")
+text = "Find the access card"
+metadata/_custom_type_script = "uid://du24yqs7yodcd"

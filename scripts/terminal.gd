@@ -71,6 +71,10 @@ func stop():
 	
 	Bus.create_event(CloseUIEvent.new())
 
+func _send_signal(name: String) -> void:
+	pass
+
+
 func _on_run_btn_pressed() -> void:
 	var player_code: String = code_edit.text
 	
@@ -85,6 +89,19 @@ func _on_run_btn_pressed() -> void:
 		for arg in args:
 			parts.append(str(arg))
 		captured_output.append(" ".join(parts))
+		
+	lua.globals["send_signal"] = func(sig_name, id): 
+		if not id:
+			captured_output.append("[ERROR] You should provide id of object, that recived signal!")
+
+		if sig_name in os.signals.keys():
+			if sig_name == "open":
+				var e = SignalOpenEvent.new()
+				e.id = str(id)
+				Bus.create_event(e)
+	lua.globals["signal_ls"] = func(): 
+		for signal_name in os.signals.keys():
+			captured_output.append("Singal [" + signal_name + "] - " + os.signals[signal_name])
 	
 	for var_name in os.env.keys():
 		print(var_name, os.env[var_name])

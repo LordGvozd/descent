@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://dx2gmrepo1tax"]
+
+[ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_sgdtq"]
+
+[resource]
+script = ExtResource("1_sgdtq")
+text = "Walk down the corridor"
+metadata/_custom_type_script = "uid://du24yqs7yodcd"

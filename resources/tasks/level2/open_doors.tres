@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://bq7ahg05fjabi"]
+
+[ext_resource type="Script" uid="uid://du24yqs7yodcd" path="res://scripts/task.gd" id="1_qvsqk"]
+
+[resource]
+script = ExtResource("1_qvsqk")
+text = "Open the doors at the terminal"
+metadata/_custom_type_script = "uid://du24yqs7yodcd"

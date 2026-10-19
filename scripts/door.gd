@@ -2,12 +2,15 @@ extends Area2D
 class_name Door
 
 @export var code: String
-@export var door_id: int
+@export var door_id: String
 
 var _opened: bool = false
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
+	
+	if door_id:
+		Bus.subscribe(SignalOpenEvent, func(e): if e.id == door_id: _open())
 	
 	if code:
 		Bus.subscribe(PinCodeOKEvent, func(e): if e.code == code: _open())

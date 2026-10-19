@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="OperationalSysytem" format=3 uid="uid://cluy3m0xmhv4w"]
+
+[ext_resource type="Script" uid="uid://xv717fkc1p7t" path="res://scripts/os.gd" id="1_lnltq"]
+
+[resource]
+script = ExtResource("1_lnltq")
+entred_code = "-- Due to the recent incident, some doors
+-- are locked and cannot be opened
+-- the usual way.
+--
+-- To open a locked door, use signals.
+-- Example:
+--   send_signal(\"open\", 1111)
+-- This opens the door with id 1111.
+--
+-- Door codes (id):
+--   main room        -- 1111
+--   command center   -- 2222
+--   server room      -- 3333
+--   generator room   -- 4444
+--
+-- Use the signal for the door you need.
+-- Do not share these codes."
+metadata/_custom_type_script = "uid://xv717fkc1p7t"
