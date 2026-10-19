@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Descent"
-run/main_scene="uid://d2gjvrdg88m4i"
+run/main_scene="uid://c4wbifxvbi6ag"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
