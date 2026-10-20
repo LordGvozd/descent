@@ -288,5 +288,6 @@ texture_pressed = ExtResource("14_iohi2")
 stretch_mode = 0
 
 [node name="ErrorPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1156336256]
+bus = &"EnvSounds"
 
 [node name="Player" type="AudioStreamPlayer2D" parent="." unique_id=1138125983]

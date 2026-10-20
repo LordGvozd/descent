@@ -5,12 +5,16 @@ extends Area2D
 
 func _ready() -> void:
 	$AnimationPlayer.play("fade_out")
-	Bus.create_event(OpenUIEvent.new())
+	var event = OpenUIEvent.new()
+	event.turn_off_shader = false
+	Bus.create_event(event)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		$AnimationPlayer.play("fade_in")
-		Bus.create_event(OpenUIEvent.new())
+		var event = OpenUIEvent.new()
+		event.turn_off_shader = false
+		Bus.create_event(event)
 		
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

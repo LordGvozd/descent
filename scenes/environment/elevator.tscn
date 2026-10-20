@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw4evbkvlqi8v" path="res://scripts/elevator.gd" id="1_2w1et"]
 [ext_resource type="Texture2D" uid="uid://bka8vf7usynnb" path="res://sprites/environment/elevator/elevator_door_opening1-sheet.png" id="1_qu53w"]
+[ext_resource type="AudioStream" uid="uid://btgqjel5cwttx" path="res://audio/sounds/elevator/door_open.mp3" id="3_3xa8n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f7ykg"]
 atlas = ExtResource("1_qu53w")
@@ -205,14 +206,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"opening",
-"speed": 10.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu53w"]
 size = Vector2(26, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0moq"]
-size = Vector2(26, 11)
+size = Vector2(26, 2)
 
 [node name="Elevator" type="Area2D" unique_id=572565735]
 script = ExtResource("1_2w1et")
@@ -220,7 +221,7 @@ script = ExtResource("1_2w1et")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=151057003]
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_y0moq")
-animation = &"opened"
+animation = &"opening"
 autoplay = "closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1660276606]
@@ -231,7 +232,11 @@ debug_color = Color(0.9744348, 0, 0.4302425, 0.41960785)
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1760943481]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1167682125]
-position = Vector2(0, -10.5)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_y0moq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1389016966]
+stream = ExtResource("3_3xa8n")
+bus = &"EnvSounds"
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

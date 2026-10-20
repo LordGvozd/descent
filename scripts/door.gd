@@ -1,4 +1,4 @@
-extends Area2D
+extends Interactable
 class_name Door
 
 @export var code: String
@@ -6,29 +6,31 @@ class_name Door
 
 var _opened: bool = false
 
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 	
 	if door_id:
-		Bus.subscribe(SignalOpenEvent, func(e): if e.id == door_id: _open())
+		Bus.subscribe(SignalOpenEvent, func(e): if e.id == door_id: open())
 	
 	if code:
-		Bus.subscribe(PinCodeOKEvent, func(e): if e.code == code: _open())
+		Bus.subscribe(PinCodeOKEvent, func(e): if e.code == code: open())
+		
+	if not (code or door_id):
+		$Sprite.visible = false
 
-func _open() -> void:
+func open() -> void:
 	$AnimatedSprite2D.play("open")
-	$StaticBody2D/CollisionShape2D.disabled = true
+	$AudioStreamPlayer2D.play()
+	$Sprite.visible = false
 	_opened = true
 	
+	await get_tree().create_timer(.3).timeout
+	$StaticBody2D/CollisionShape2D.disabled = true
 	
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		if not _opened:
-			if code:
-				var event = OpenPinCodeEvent.new()
-				event.code = code
-				Bus.create_event(event)
-
-
-func _on_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+func interact() -> void:
+	if not _opened:
+		if code:
+			var event = OpenPinCodeEvent.new()
+			event.code = code
+			Bus.create_event(event)

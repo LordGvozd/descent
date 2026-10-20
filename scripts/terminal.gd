@@ -14,14 +14,17 @@ class_name Terminal
 @export var start_sound: AudioStreamMP3
 @export var work_sound: AudioStreamMP3
 @export var stop_sound: AudioStreamMP3
+@export var max_lines = 30
 
 @export var enter_sound: Array[AudioStreamMP3] = []
 @export var btn_sound: Array[AudioStreamMP3] = []
 
+
 var _is_open: bool = false
 
+
+
 func _ready():
-	print(os.env)
 	# Создать пустую тему
 	var invisible_theme = Theme.new()
 	var empty_style = StyleBoxEmpty.new()
@@ -33,6 +36,20 @@ func _ready():
 	output.theme = invisible_theme
 	
 	code_edit.text = os.entred_code
+	
+	var keyword_color = Color("#A36F5C")
+	var lua_keywords = [
+		"and", "break", "do", "else", "elseif",
+		"end", "false", "for", "function", "goto",
+		"if", "in", "local", "nil", "not",
+		"or", "repeat", "return", "then", "true",
+		"until", "while"
+	]
+	
+	for kw in lua_keywords:
+		code_edit.syntax_highlighter.keyword_colors[kw] = keyword_color
+	
+	
 	
 func interact() -> void:
 	start()
@@ -74,13 +91,25 @@ func stop():
 func _send_signal(name: String) -> void:
 	pass
 
-
 func _on_run_btn_pressed() -> void:
 	var player_code: String = code_edit.text
 	
 	# В скрипте, где вы запускаете код игрока
 	var lua := LuaState.new()
 	lua.open_libraries() 
+	lua.do_string("""
+    __stop_requested = false
+    __instruction_count = 0
+    __instruction_limit = 10000  
+    __check_interval = 500      
+    
+    debug.sethook(function()
+        __instruction_count = __instruction_count + __check_interval
+        if __stop_requested or __instruction_count > __instruction_limit then
+            error("Script stopped: instruction limit exceeded", 0)
+        end
+    end, "", __check_interval)
+""")
 	
 	var captured_output: Array[String] = []
 
@@ -94,11 +123,12 @@ func _on_run_btn_pressed() -> void:
 		if not id:
 			captured_output.append("[ERROR] You should provide id of object, that recived signal!")
 
-		if sig_name in os.signals.keys():
+		if os.signals.has(sig_name):
 			if sig_name == "open":
 				var e = SignalOpenEvent.new()
 				e.id = str(id)
 				Bus.create_event(e)
+				captured_output.append("signal sended")
 	lua.globals["signal_ls"] = func(): 
 		for signal_name in os.signals.keys():
 			captured_output.append("Singal [" + signal_name + "] - " + os.signals[signal_name])
@@ -112,6 +142,24 @@ func _on_run_btn_pressed() -> void:
 	if result is LuaError:
 		captured_output.append("[ERROR] " + result.message)
 
-
+	var text_to_print = ""
+	
 	for line in captured_output:
-		output.text += ">>>   " +  line + "\n"
+		text_to_print += ">>>   " +  line + "\n"
+		
+	_print_smooth(text_to_print)
+	
+func _print_smooth(text: String) -> void:
+	if not text:
+		return
+	var duration = .7
+	var delay = duration / len(text) 
+	for c in text:
+		output.text += c
+		await get_tree().create_timer(delay).timeout
+	
+	var lines = output.text.split("\n")
+	if lines.size() > max_lines:
+		output.text = "\n".join(lines.slice(lines.size() - max_lines))
+	
+	

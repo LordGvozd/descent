@@ -10,7 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cyg737r5d64n2" path="res://sprites/player/player_idle/enforcer_ up_idle1-sheet.png" id="5_o4126"]
 [ext_resource type="Script" uid="uid://bro4eppqvlj8h" path="res://scripts/player/player_animations.gd" id="6_cw2d6"]
 [ext_resource type="Material" uid="uid://c8gj65yygxjgw" path="res://shaders/vhs.tres" id="11_d3wef"]
+[ext_resource type="Script" uid="uid://b4d0sj1l4y1cq" path="res://scripts/player/player_sounds.gd" id="12_lkdrv"]
 [ext_resource type="PackedScene" uid="uid://bjbga7ee1lxx0" path="res://scenes/Phone.tscn" id="12_o4126"]
+[ext_resource type="AudioStream" uid="uid://uhww4hj86h1x" path="res://audio/sounds/steps/footstep-concrete-01.mp3" id="13_jfpux"]
+[ext_resource type="AudioStream" uid="uid://c8ig6nqrud2ne" path="res://audio/sounds/steps/footstep-concrete-02.mp3" id="14_61ith"]
+[ext_resource type="AudioStream" uid="uid://dd2banmwt7o4r" path="res://audio/sounds/steps/footstep-concrete-03.mp3" id="15_ebwui"]
+[ext_resource type="AudioStream" uid="uid://br42sigo2fuad" path="res://audio/sounds/steps/footstep-concrete-04.mp3" id="16_sfy4j"]
+[ext_resource type="AudioStream" uid="uid://dl6tfwyluv6ue" path="res://audio/sounds/steps/footstep-concrete-05.mp3" id="17_gv3ic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv10x"]
 atlas = ExtResource("3_6eyey")
@@ -576,6 +582,12 @@ zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="StepSoundPlayer" type="AudioStreamPlayer2D" parent="Body" unique_id=75871101]
+volume_db = -23.111
+bus = &"EnvSounds"
+script = ExtResource("12_lkdrv")
+step_sounds = Array[AudioStreamMP3]([ExtResource("13_jfpux"), ExtResource("14_61ith"), ExtResource("15_ebwui"), ExtResource("16_sfy4j"), ExtResource("17_gv3ic")])
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348486661]
 
 [node name="VHSFilter" type="ColorRect" parent="CanvasLayer" unique_id=1557553697]
@@ -586,3 +598,5 @@ offset_right = 1153.0
 offset_bottom = 654.0
 
 [node name="Phone" parent="." unique_id=192636998 instance=ExtResource("12_o4126")]
+
+[connection signal="finished" from="Body/StepSoundPlayer" to="Body/StepSoundPlayer" method="_on_finished"]

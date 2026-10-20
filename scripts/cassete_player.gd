@@ -110,6 +110,7 @@ func interact() -> void:
 	$Shader.visible = true
 	$CanvasLayer/UI/VideoStreamPlayer.stream = null
 	$CanvasLayer/UI.visible = true
+	$CanvasLayer/UI/Block.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_playing_casset = false
 	$CanvasLayer/UI/VideoStreamPlayer.paused = false
 	_update()
@@ -126,6 +127,7 @@ func interact() -> void:
 
 
 func _on_on_off_button_button_up() -> void:
+	$CanvasLayer/UI/Block.mouse_filter = Control.MOUSE_FILTER_STOP
 	$CassetSoundsPlayer.stream = off_on_sound
 	$CassetSoundsPlayer.play()
 	await $CassetSoundsPlayer.finished

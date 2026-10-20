@@ -11,14 +11,24 @@ config_version=5
 [application]
 
 config/name="Descent"
-run/main_scene="uid://c4wbifxvbi6ag"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+run/main_scene="uid://cx78j5tqu61sr"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://csiamyymqof5b"
 
 [autoload]
 
 Bus="*uid://dojfodnmvinl5"
 Transition="*uid://dnpp35fkcrrei"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [global_group]
 

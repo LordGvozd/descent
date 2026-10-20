@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://jb8aj6bnrmen" path="res://audio/sounds/terminal/ambient.mp3" id="2_5gc51"]
 [ext_resource type="AudioStream" uid="uid://04kfg547tnbu" path="res://audio/sounds/terminal/start_term.mp3" id="2_gqmjq"]
 [ext_resource type="CodeHighlighter" uid="uid://si712emdfs7q" path="res://resources/code_highliter.tres" id="2_i12f4"]
+[ext_resource type="Script" uid="uid://xv717fkc1p7t" path="res://scripts/os.gd" id="2_vvi6i"]
 [ext_resource type="FontFile" uid="uid://dld00n15ff70e" path="res://fonts/BigBlueTerm437NerdFont-Regular.ttf" id="3_8xblc"]
 [ext_resource type="AudioStream" uid="uid://dvy6m37r5v54e" path="res://audio/sounds/terminal/buttons/enter1.mp3" id="3_nd1ck"]
 [ext_resource type="AudioStream" uid="uid://qsrpaus584if" path="res://audio/sounds/terminal/buttons/enter2.mp3" id="4_4rgxq"]
@@ -21,6 +22,10 @@
 [ext_resource type="AudioStream" uid="uid://dnid2p0v4bb5l" path="res://audio/sounds/terminal/stop_term.mp3" id="12_5mn5p"]
 [ext_resource type="Texture2D" uid="uid://bk8f5rqycar85" path="res://sprites/ui/cassets_player/console.png" id="14_5mn5p"]
 [ext_resource type="Texture2D" uid="uid://brrtp1i3egu3x" path="res://sprites/environment/terminal.png" id="21_etppt"]
+
+[sub_resource type="Resource" id="Resource_85erw"]
+script = ExtResource("2_vvi6i")
+metadata/_custom_type_script = "uid://xv717fkc1p7t"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etppt"]
 size = Vector2(34, 32.666668)
@@ -146,7 +151,10 @@ shader_parameter/scanline_opacity = 0.15
 
 [node name="Terminal" type="Area2D" unique_id=152449681]
 script = ExtResource("1_enqfd")
+os = SubResource("Resource_85erw")
+start_sound = ExtResource("2_gqmjq")
 work_sound = ExtResource("2_5gc51")
+stop_sound = ExtResource("12_5mn5p")
 enter_sound = Array[AudioStreamMP3]([ExtResource("3_nd1ck"), ExtResource("4_4rgxq"), ExtResource("5_e212h")])
 btn_sound = Array[AudioStreamMP3]([ExtResource("6_wdaqj"), ExtResource("7_5mn5p"), ExtResource("8_etppt"), ExtResource("9_vvi6i"), ExtResource("10_85erw"), ExtResource("11_gtdte")])
 metadata/_custom_type_script = "uid://drj058trxs4vv"
@@ -236,6 +244,7 @@ offset_right = 0.079956055
 offset_bottom = 0.15197754
 theme_override_colors/default_color = Color(0.8509804, 0.49411765, 0.14901961, 1)
 theme_override_fonts/normal_font = ExtResource("3_8xblc")
+scroll_following = true
 
 [node name="RunBtn" type="TextureButton" parent="CanvasLayer/UI" unique_id=2531252]
 layout_mode = 1

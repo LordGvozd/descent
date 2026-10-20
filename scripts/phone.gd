@@ -5,11 +5,14 @@ extends Node2D
 
 var tasks: Array[Task] = []
 var _is_open: bool = false
-
+var _can_open: bool = true
 
 func _ready() -> void:
 	Bus.subscribe(NewTaskEvent, func(e): set_task(e.task))
 	Bus.subscribe(TaskDoneEvent, func(e): _remove_task(e.task))
+	
+	Bus.subscribe(OpenUIEvent, func(e): _can_open = false)
+	Bus.subscribe(CloseUIEvent, func(e): _can_open = true)
 
 func _remove_task(task: Task) -> void:
 	var index_to_remove = null
@@ -47,7 +50,7 @@ func _input(event: InputEvent) -> void:
 			$CanvasLayer/Control.visible = false
 			_is_open = false
 			Bus.create_event(CloseUIEvent.new())
-		else:
+		elif _can_open:
 			$CanvasLayer/Control.visible = true
 			_is_open = true
 			Bus.create_event(OpenUIEvent.new())

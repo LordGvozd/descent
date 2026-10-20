@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://m5t80a4gl45w"]
+
+[ext_resource type="VideoStream" uid="uid://ci1nct038706s" path="res://test_video/SKOLIOZ.ogv" id="1_m2d6j"]
+[ext_resource type="Script" uid="uid://v4o8363pw4mx" path="res://scenes/video.gd" id="1_yk5gg"]
+[ext_resource type="PackedScene" uid="uid://d2gjvrdg88m4i" path="res://scenes/levels/level1.tscn" id="2_gqsbi"]
+
+[node name="Video" type="Control" unique_id=1135508732]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yk5gg")
+scene = ExtResource("2_gqsbi")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=429901000]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_m2d6j")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1ua5eqg4pgeb" path="res://scripts/casset.gd" id="1_jrpvv"]
 [ext_resource type="Resource" uid="uid://b0ttqsriyvya1" path="res://resources/cassete_textures/texture5.tres" id="2_lq2af"]
-[ext_resource type="VideoStream" uid="uid://ci68o5h0yhdqq" path="res://test_video/test1.ogv" id="3_8cp4r"]
+[ext_resource type="VideoStream" uid="uid://c0r4f4opmuid4" path="res://test_video/луа____.ogv" id="3_8cp4r"]
 
 [resource]
 script = ExtResource("1_jrpvv")

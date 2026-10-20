@@ -35,6 +35,7 @@ func open_pincode(event: OpenPinCodeEvent):
 	_used_attempts = 0
 	max_attempts = event.attempts
 	code = event.code
+	_entered_numbers = []
 	$CanvasLayer/UI/Label.text = ""
 	target_code = []
 	for char in code:
@@ -44,6 +45,7 @@ func open_pincode(event: OpenPinCodeEvent):
 	$CanvasLayer/UI.visible = true
 	
 func close_pincode():
+	_entered_numbers = []
 	$CanvasLayer/UI.visible = false
 	Bus.create_event(CloseUIEvent.new())
 		

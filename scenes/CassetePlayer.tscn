@@ -370,6 +370,14 @@ texture_pressed = ExtResource("12_jxb1p")
 texture_hover = ExtResource("13_ouevh")
 stretch_mode = 0
 
+[node name="Block" type="Panel" parent="CanvasLayer/UI" unique_id=1823546706]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0020001
+offset_bottom = -1.2940674
+
 [node name="Shader" type="CanvasLayer" parent="." unique_id=1764389309]
 layer = 10
 visible = false

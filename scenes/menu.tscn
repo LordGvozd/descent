@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c4wbifxvbi6ag"]
+[gd_scene format=3 uid="uid://cx78j5tqu61sr"]
 
-[ext_resource type="Script" uid="uid://kx4cbqx4n84d" path="res://scripts/menu.gd" id="1_g3eks"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_g3eks"]
 [ext_resource type="Texture2D" uid="uid://b855eki8dugbt" path="res://sprites/ui/menu/menu.png" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://cv3ug3cr1pql0" path="res://sprites/ui/menu/menu_play_button.png" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://d16w4c4ahj30r" path="res://sprites/ui/menu/menu_play_button_hover.png" id="3_mhnvy"]
@@ -68,7 +68,7 @@ log_label = NodePath("LogLabel")
 log_paragraph_delay = 1.5
 play_button_log = "res://resources/menu_logs/play.txt"
 settings_button_log = "res://resources/menu_logs/settings.txt"
-play_scene = "uid://d2gjvrdg88m4i"
+play_scene = "uid://m5t80a4gl45w"
 main_ui = NodePath("Main")
 settings_panel = NodePath("Settings")
 

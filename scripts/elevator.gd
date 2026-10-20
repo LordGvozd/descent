@@ -16,8 +16,8 @@ func _ready() -> void:
 	Bus.subscribe(SignalOpenEvent, func(e): if e.id == pincode: _pin_code_entered = true)
 
 func interact() -> void:
-	print("burmulda")
 	if not _pin_code_entered and not opened:
+
 		var pincode_event = OpenPinCodeEvent.new()
 		pincode_event.code = pincode
 		Bus.create_event(pincode_event)
@@ -25,12 +25,16 @@ func interact() -> void:
 	
 	if _state == State.CLOSED or _state == State.CLOSING:
 		_state = State.OPENING
+		$AudioStreamPlayer2D.play()
+		await get_tree().create_timer(.2).timeout
 		_animated_sprite.play("opening")
 
 
 func _process(_delta: float) -> void:
 	if not _player_in and _state == State.OPENED:
 		_state = State.CLOSING
+		$AudioStreamPlayer2D.play()
+		await get_tree().create_timer(.5).timeout
 		_animated_sprite.play("closing")
 
 
