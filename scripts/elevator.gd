@@ -13,7 +13,7 @@ var _pin_code_entered: bool = false
 
 func _ready() -> void:
 	Bus.subscribe(PinCodeOKEvent, func(e): if e.code == pincode: _pin_code_entered = true)
-	Bus.subscribe(SignalOpenEvent, func(e): if e.id == pincode: _pin_code_entered = true)
+	Bus.subscribe(SignalEvent, func(e): if e.object_id == pincode: _pin_code_entered = true)
 
 func interact() -> void:
 	if not _pin_code_entered and not opened:

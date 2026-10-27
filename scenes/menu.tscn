@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dld00n15ff70e" path="res://fonts/BigBlueTerm437NerdFont-Regular.ttf" id="7_v86rl"]
 [ext_resource type="AudioStream" uid="uid://jb8aj6bnrmen" path="res://audio/sounds/terminal/ambient.mp3" id="8_13sgg"]
 [ext_resource type="AudioStream" uid="uid://besbdv5vc038" path="res://audio/sounds/menu/beep.wav" id="8_i6lef"]
+[ext_resource type="Shader" uid="uid://b875jyn24ekrw" path="res://shaders/crt.gdshader" id="11_mj5lg"]
 
 [sub_resource type="Theme" id="Theme_g3eks"]
 default_font = ExtResource("7_v86rl")
@@ -51,9 +52,21 @@ _data = {
 &"typewriter": SubResource("Animation_13sgg")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(0.9607843, 0.5294118, 0.12156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
+bg_color = Color(0.66439414, 0.5908044, 0.45477045, 1)
+
 [sub_resource type="Theme" id="Theme_i6lef"]
 default_font = ExtResource("7_v86rl")
 default_font_size = 27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ufwb2"]
+shader = ExtResource("11_mj5lg")
+shader_parameter/curvature = 2.0
+shader_parameter/scanline_count = 300.0
+shader_parameter/scanline_opacity = 0.15
 
 [node name="Menu" type="Control" unique_id=2068815935 node_paths=PackedStringArray("buttons", "log_label", "main_ui", "settings_panel")]
 layout_mode = 3
@@ -115,6 +128,8 @@ offset_left = 391.0
 offset_top = 117.0
 offset_right = 848.0
 offset_bottom = 149.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_mj5lg")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_ufwb2")
 step = 25.0
 value = 50.0
 
@@ -165,6 +180,18 @@ offset_bottom = 280.0
 texture_normal = ExtResource("4_4ytvr")
 texture_hover = ExtResource("5_g3eks")
 stretch_mode = 4
+
+[node name="Shader" type="CanvasLayer" parent="." unique_id=1162693023]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="Shader" unique_id=1849661884]
+material = SubResource("ShaderMaterial_ufwb2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Settings/BackButton" to="." method="_on_back_button_pressed"]

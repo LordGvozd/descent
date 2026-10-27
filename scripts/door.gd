@@ -2,21 +2,18 @@ extends Interactable
 class_name Door
 
 @export var code: String
-@export var door_id: String
 
 var _opened: bool = false
 
 
 func _ready() -> void:
+	code = $"..".code
 	$AnimatedSprite2D.play("idle")
-	
-	if door_id:
-		Bus.subscribe(SignalOpenEvent, func(e): if e.id == door_id: open())
 	
 	if code:
 		Bus.subscribe(PinCodeOKEvent, func(e): if e.code == code: open())
 		
-	if not (code or door_id):
+	if not code:
 		$Sprite.visible = false
 
 func open() -> void:
@@ -27,6 +24,15 @@ func open() -> void:
 	
 	await get_tree().create_timer(.3).timeout
 	$StaticBody2D/CollisionShape2D.disabled = true
+	
+func close() -> void:
+	$AnimatedSprite2D.play("close")
+	$AudioStreamPlayer2D.play()
+	$Sprite.visible = true
+	_opened = false
+	
+	await get_tree().create_timer(.3).timeout
+	$StaticBody2D/CollisionShape2D.disabled = false
 	
 func interact() -> void:
 	if not _opened:

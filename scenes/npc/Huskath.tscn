@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dswos8rnfelgk"]
+
+[ext_resource type="Script" uid="uid://bku6wm1g7ww32" path="res://scripts/npc/huskath.gd" id="1_pgc6f"]
+[ext_resource type="Texture2D" uid="uid://c0vvvyx7fiwik" path="res://sprites/monster/monster.png" id="2_f3tih"]
+[ext_resource type="Texture2D" uid="uid://bbtcyedgocqod" path="res://sprites/monster/monster_walk1-sheet.png" id="3_rnw7g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38gm0"]
+atlas = ExtResource("3_rnw7g")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo5e4"]
+atlas = ExtResource("3_rnw7g")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a66xt"]
+atlas = ExtResource("3_rnw7g")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4m8i"]
+atlas = ExtResource("3_rnw7g")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agx6x"]
+atlas = ExtResource("3_rnw7g")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4roc0"]
+atlas = ExtResource("3_rnw7g")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c65l"]
+atlas = ExtResource("3_rnw7g")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjeqv"]
+atlas = ExtResource("3_rnw7g")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgc6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f3tih")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38gm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo5e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a66xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4m8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agx6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4roc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c65l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjeqv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnw7g"]
+radius = 7.5166483
+
+[node name="Huskath" type="CharacterBody2D" unique_id=1134145998]
+script = ExtResource("1_pgc6f")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1438183784]
+sprite_frames = SubResource("SpriteFrames_pgc6f")
+autoplay = "default"
+frame_progress = 0.24374157
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1843668290]
+position = Vector2(0, 18)
+shape = SubResource("CircleShape2D_rnw7g")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1879988590]

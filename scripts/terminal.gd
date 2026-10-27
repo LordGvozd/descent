@@ -4,7 +4,7 @@ class_name Terminal
 
 
 @export var os: OperationalSysytem
-
+@export var room: Room
 
 @onready var code_edit = $CanvasLayer/UI/CodeEdit
 @onready var output = $CanvasLayer/UI/Output
@@ -106,9 +106,9 @@ func _on_run_btn_pressed() -> void:
     debug.sethook(function()
         __instruction_count = __instruction_count + __check_interval
         if __stop_requested or __instruction_count > __instruction_limit then
-            error("Script stopped: instruction limit exceeded", 0)
+			error("Script stopped: instruction limit exceeded", 0)
         end
-    end, "", __check_interval)
+	end, "", __check_interval)
 """)
 	
 	var captured_output: Array[String] = []
@@ -122,17 +122,25 @@ func _on_run_btn_pressed() -> void:
 	lua.globals["send_signal"] = func(sig_name, id): 
 		if not id:
 			captured_output.append("[ERROR] You should provide id of object, that recived signal!")
-
-		if os.signals.has(sig_name):
-			if sig_name == "open":
-				var e = SignalOpenEvent.new()
-				e.id = str(id)
-				Bus.create_event(e)
-				captured_output.append("signal sended")
-	lua.globals["signal_ls"] = func(): 
-		for signal_name in os.signals.keys():
-			captured_output.append("Singal [" + signal_name + "] - " + os.signals[signal_name])
-	
+			return
+		
+		var e = SignalEvent.new()
+		e.object_id = str(id)
+		
+		match sig_name:
+			"on":
+				e.signal_type = SignalEvent.SignalType.ON
+			"off":
+				e.signal_type = SignalEvent.SignalType.OFF
+			_:
+				captured_output.append("[ERROR] Incorret signal name!")
+				return
+			
+		Bus.create_event(e)
+		captured_output.append("signal sended")
+		
+	lua.globals["room"] = room.as_dict()
+			
 	for var_name in os.env.keys():
 		print(var_name, os.env[var_name])
 		lua.globals[var_name] = os.env[var_name]

@@ -1,4 +1,7 @@
 extends IEvent
-class_name SignalOpenEvent
+class_name SignalEvent
 
-@export var id: String
+enum SignalType {ON, OFF}
+
+@export var object_id: String
+@export var signal_type: SignalType

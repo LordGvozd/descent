@@ -10,7 +10,7 @@ entred_code = "-- Due to the recent incident, some doors
 --
 -- To open a locked door, use signals.
 -- Example:
---   send_signal(\"open\", 1111)
+--   send_signal(\"off\", 1111)
 -- This opens the door with id 1111.
 --
 -- Door codes (id):
